@@ -43,5 +43,7 @@
   ],
   "esmodules": [
     "translation-PHB-fr.js"
-  ]
+  ],
+  "manifest": "https://raw.githubusercontent.com/wirgeen/translation-PHB-fr/master/module.json",
+  "download": "https://github.com/wirgeen/translation-PHB-fr/releases/download/v1.0.0/translation-PHB-fr.zip"
 }
