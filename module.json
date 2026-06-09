@@ -1,0 +1,47 @@
+{
+  "id": "translation-PHB-fr",
+  "title": "D&D 5e - Traduction FR - Manuel du Joueur",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {}
+      }
+    ],
+    "requires": [
+      {
+        "id": "dnd-players-handbook",
+        "type": "module"
+      }
+    ],
+    "recommends": [
+      {
+        "id": "babele",
+        "type": "module",
+        "compatibility": {}
+      }
+    ]
+  },
+  "authors": [
+    {
+      "name": "wirgeen",
+      "flags": {}
+    }
+  ],
+  "languages": [
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    }
+  ],
+  "esmodules": [
+    "translation-PHB-fr.js"
+  ]
+}

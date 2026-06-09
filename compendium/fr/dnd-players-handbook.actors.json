@@ -1,0 +1,2950 @@
+{
+  "label": "Actors",
+  "mapping": {
+    "movement": {
+      "path": "system.attributes.movement",
+      "converter": "movement"
+    },
+    "token": {
+      "path": "prototypeToken.sight.range",
+      "converter": "sightRange"
+    },
+    "items": {
+      "path": "items",
+      "converter": "items"
+    },
+    "effects": {
+      "path": "effects",
+      "converter": "effects"
+    },
+    "tokenName": "prototypeToken.name"
+  },
+  "folders": {
+    "Aberrant Spirits": "Esprits Aberrants",
+    "Animated Objects": "Objets Animés",
+    "Bestial Spirits": "Esprits Bestiaux",
+    "Celestial Spirits": "Esprits Célestes",
+    "Companions": "Compagnons",
+    "Conjurations": "Conjurations",
+    "Conjured Elementals": "Élémentaires Conjurés",
+    "Construct Spirits": "Esprits Construct",
+    "Creatures": "Créatures",
+    "Elemental Spirits": "Esprits Élémentaires",
+    "Example Characters": "Example Characters",
+    "Fey Spirits": "Esprits Fey",
+    "Fiendish Spirits": "Esprits Démoniaques",
+    "Giant Insects": "Insectes Géants",
+    "Otherworldly Steeds": "Montures d'Autres-Mondes",
+    "Primal Companions": "Compagnons Primitifs",
+    "Summon Templates": "Modèles d'Invocation",
+    "Summons": "Invocations",
+    "Undead Spirits": "Esprits Morts-Vivants",
+    "Vehicles": "Véhicules"
+  },
+  "entries": {
+    "Aberrant Spirit": {
+      "name": "Esprit Aberrant",
+      "tokenName": "Esprit Aberrant",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonAber caption=false]</p>",
+      "items": {
+        "Regeneration": {
+          "name": "Régénération",
+          "description": "<p>L'esprit récupère [[/healing 5]]{5 points de vie} au début de son tour si elle a au moins 1 point de vie.</p>",
+          "activities": {
+            "heal": {
+              "condition": "start of its turn, if it has at least 1 Hit Point"
+            }
+          }
+        },
+        "Whispering Aura": {
+          "name": "Aura Chuchotante",
+          "description": "<p> At the start of each of ses tours, l'esprit émet de l'énergie psionique if it n'a pas l'état neutralisé. <em>Jet de sauvegarde de Sagesse :</em> DD égal à votre DD de sauvegarde de sort, chaque créature (other than you) dans un rayon de 1,50 m of l'esprit. <em>Échec :</em> 2d6 dégâts psychiques.</p>",
+          "activities": {
+            "save": {
+              "condition": "start of its turn"
+            }
+          }
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Claw": {
+          "name": "Griffe",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d10 + 3 + le niveau du sort dégâts tranchants, et la cible ne peut pas récupère points de vie until the start of the spirc'est next turn.</p>",
+          "effects": {
+            "Blocked Healing": {
+              "name": "Soin bloqué"
+            }
+          }
+        },
+        "Eye Ray": {
+          "name": "Eye Ray",
+          "description": "<p> <em>Jet d'attaque à distance :</em> Bonus égal à votre modificateur d'attaque de sort, portée 45 m <em>Touché :</em> 1d8 + 3 + le niveau du sort dégâts psychiques.</p>"
+        },
+        "Psychic Slam": {
+          "name": "Coup Psychique",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché : </em>1d8 + 3 + le niveau du sort dégâts psychiques.</p>"
+        }
+      }
+    },
+    "Air Elemental Spirit": {
+      "name": "Esprit Élémentaire de l'Air",
+      "tokenName": "Esprit Élémentaire de l'Air",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonElem caption=false]</p>",
+      "items": {
+        "Amorphous Form": {
+          "name": "Forme Amorphe",
+          "description": "<p> L'esprit peut traverser un espace aussi étroit que de largeur 2,5 cm sans que cela compte comme terrain difficile.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques [[/item Slam]] égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Slam": {
+          "name": "Coup",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d10 + 4 + le niveau du sort dégâts de foudre.</p>"
+        }
+      }
+    },
+    "Airship": {
+      "name": "Vaisseau Aérien",
+      "tokenName": "Vaisseau Aérien",
+      "description": "<p><strong>Vitesse:</strong> 8 mph</p><p><strong>Crew:</strong> 10</p><p><strong>Passengers:</strong> 20</p><p><strong>Cargo (Tons):</strong> 1</p><p><strong>AC:</strong> 13</p><p><strong>HP:</strong> 300</p><p><strong>Damage Threshold:</strong> —</p><p><strong>Cost:</strong> 40,000 GP</p>"
+    },
+    "Ape": {
+      "name": "Singe",
+      "tokenName": "Singe",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>Le singe effectue deux [[/item Fist]] attacks.</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Fist": {
+          "name": "Poing",
+          "description": "<p><em>Jet d'attaque au corps à corps : </em>+5, allonge 1,50 m <em>Touché :</em> 5 (1d4 + 3) dégâts contondants.</p>"
+        }
+      }
+    },
+    "Arcane Eye": {
+      "name": "Œil Arcanique",
+      "tokenName": "Œil Arcanique",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplArcaneEye0 caption=false]</p>",
+      "items": {
+        "Move": {
+          "name": "Move",
+          "description": "<p>En tant qu'action bonus, vous pouvez déplacer l'œil jusqu\\'à 9 m dans n'importe quelle direction. Un obstacle solide blocks the eye’s movement, but l'œil peut passer through an opening aussi petite que 2,5 cm in diameter.</p>",
+          "activities": {
+            "utility": {
+              "condition": "Bonus Action used by summoner"
+            }
+          }
+        }
+      }
+    },
+    "Avenger Spirit": {
+      "name": "Esprit Vengeur",
+      "tokenName": "Esprit Vengeur",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonCele caption=false]</p>",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Radiant Bow": {
+          "name": "Radiant Bow",
+          "description": "<p> <em>Jet d'attaque à distance :</em> Bonus égal à votre modificateur d'attaque de sort, portée 180 m <em>Touché :</em> 2d6 + 2 + le niveau du sort dégâts radiants.</p>"
+        },
+        "Healing Touch": {
+          "name": "Toucher Guérisseur",
+          "description": "<p> L'esprit touche une autre créature. La cible récupère des points de vie égaux à 2d8 + le niveau du sort.</p>"
+        }
+      }
+    },
+    "Badger": {
+      "name": "Blaireau",
+      "tokenName": "Blaireau",
+      "items": {
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> +2, allonge 1,50 m <em>Touché :</em> 1 dégâts perforants.</p>"
+        }
+      }
+    },
+    "Barbarian": {
+      "name": "Barbare",
+      "tokenName": "Barbare",
+      "description": "<table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.5ay66aAVgkgRH7qH]{Step 1: Choose a Class}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Likes</th><th scope=\"col\">Primary Ability</th><th scope=\"col\">Complexity</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbBarbarian0000]{Barbarian}</td><td>Battle</td><td>Strength</td><td>Average</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.t1WP9VEevo4TOTXw]{Step 2: Determine Origin}</caption><thead><tr><th scope=\"col\">Background</th><th scope=\"col\">Species</th><th scope=\"col\">Languages</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbbgSailor00000]{Sailor}</td><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbspGoliath0000]{Goliath}</td><td>Giant, Goblin</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.9o8NbQ1Ph2xCxlQh]{Step 3: Determine Ability Scores}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Str.</th><th scope=\"col\">Dex.</th><th scope=\"col\">Con.</th><th scope=\"col\">Int.</th><th scope=\"col\">Wis.</th><th scope=\"col\">Cha.</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.classes.Item.phbbrbBarbarian0]{Barbarian}</td><td>15</td><td>13</td><td>14</td><td>10</td><td>12</td><td>8</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.6ThVICG0QSRy7L0F]{Step 4: Choose an Alignment}</caption><thead><tr><th scope=\"col\">Alignment</th><th scope=\"col\">Personality</th></tr></thead><tbody><tr><td>Chaotic</td><td>Rebellious</td></tr><tr><td>Evil</td><td>Vengeful</td></tr></tbody></table>"
+    },
+    "Bard": {
+      "name": "Barde",
+      "tokenName": "Bard",
+      "description": "<table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.5ay66aAVgkgRH7qH]{Step 1: Choose a Class}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Likes</th><th scope=\"col\">Primary Ability</th><th scope=\"col\">Complexity</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbBard000000000]{Bard}</td><td>Performing</td><td>Charisma</td><td>High</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.t1WP9VEevo4TOTXw]{Step 2: Determine Origin}</caption><thead><tr><th scope=\"col\">Background</th><th scope=\"col\">Species</th><th scope=\"col\">Languages</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbbgEntertainer]{Entertainer}</td><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbspChthonicTie]{Tiefling, Chthonic}</td><td>Halfling, Giant</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.9o8NbQ1Ph2xCxlQh]{Step 3: Determine Ability Scores}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Str.</th><th scope=\"col\">Dex.</th><th scope=\"col\">Con.</th><th scope=\"col\">Int.</th><th scope=\"col\">Wis.</th><th scope=\"col\">Cha.</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.classes.Item.phbbrdBard000000]{Bard}</td><td>8</td><td>14</td><td>12</td><td>13</td><td>10</td><td>15</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.6ThVICG0QSRy7L0F]{Step 4: Choose an Alignment}</caption><thead><tr><th scope=\"col\">Alignment</th><th scope=\"col\">Personality</th></tr></thead><tbody><tr><td>Neutral</td><td>Selfish</td></tr><tr><td>Evil</td><td>Greedy</td></tr></tbody></table>"
+    },
+    "Bat": {
+      "name": "Chauve-souris",
+      "tokenName": "Chauve-souris",
+      "items": {
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> +4, allonge 1,50 m <em>Touché :</em> 1 dégâts perforants.</p>"
+        }
+      }
+    },
+    "Beast of the Land": {
+      "name": "Bête de la Terre",
+      "tokenName": "Bête de la Terre",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.classes.Item.phbrgrPrimalComp caption=false]</p>",
+      "items": {
+        "Primal Bond": {
+          "name": "Primal Bond",
+          "description": "<p>Ajoutez votre bonus de maîtrise à tout test de caractéristique ou jet de sauvegarde que la bête effectue.</p><section class=\"secret\" id=\"secret-CfXBtyjBnCMQ2fmp\"><p><strong>Note Foundry</strong></p><p>Ce bonus a été included in la bête's global bonuses.</p></section>"
+        },
+        "Beast's Strike": {
+          "name": "Beast's Strike",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 + 2 plus votre modificateur de Sagesse Bludgeoning, Piercing, or dégâts tranchants (your choice lorsque vous invoquez la bête). If la bête moved at least 6 m straight toward la cible before the hit, la cible takes an extra 1d6 damage of the same type, et la cible a l'état &amp;Reference[prone] if it is a Grande taille ou inférieure creature.</p><section class=\"secret\" id=\"secret-fxROphHp3AaFzUXp\"><p><strong>Note Foundry</strong></p><p>The <strong>Attack</strong> et <strong>Charging Attack</strong> activities will allow you to choose the damage type in the roll dialog. You should choose one damage type et use it consistently until resummoning your companion.</p><p>The <strong>Charging Attack</strong> activity includes the additional damage.</p></section>",
+          "activities": {
+            "Charge": {
+              "name": "Charge",
+              "condition": "has moved at least 20 feet straight toward the target"
+            }
+          },
+          "effects": {
+            "Prone": {
+              "name": "À terre"
+            }
+          }
+        }
+      }
+    },
+    "Beast of the Sea": {
+      "name": "Bête de la Mer",
+      "tokenName": "Beast of the Sea",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.classes.Item.phbrgrPrimalComp caption=false]</p>",
+      "items": {
+        "Amphibious": {
+          "name": "Amphibie",
+          "description": "<p> La bête peut respirer l'air et l'eau.</p>"
+        },
+        "Primal Bond": {
+          "name": "Primal Bond",
+          "description": "<p>Ajoutez votre bonus de maîtrise à tout test de caractéristique ou jet de sauvegarde que la bête effectue.</p><section class=\"secret\" id=\"secret-pNoLkUZKFbyzHTbF\"><p><strong>Note Foundry</strong></p><p>Ce bonus a été included in la bête's global bonuses.</p></section>"
+        },
+        "Beast's Strike": {
+          "name": "Beast's Strike",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d6 + 2 plus votre modificateur de Sagesse Bludgeoning or dégâts perforants (your choice lorsque vous invoquez la bête), et la cible a l'état &amp;Reference[grappled] (escape DD égal à votre DD de sauvegarde de sort).</p><section class=\"secret\" id=\"secret-AoVM7zkUrdX0Ny38\"><p><strong>Note Foundry</strong></p><p>The <strong>Attack</strong> activity will allow you to choose the damage type in the roll dialog. You should choose one damage type et use it consistently until resummoning your companion.</p></section>",
+          "activities": {
+            "Escape Check": {
+              "name": "Test d'évasion",
+              "condition": "Taken by Grappled creature to Escape"
+            }
+          },
+          "effects": {
+            "Grappled": {
+              "name": "Agrippé",
+              "description": "<p>DD d'évasion equals the ranger's DD de sauvegarde de sort. [[/check ath acr]].</p>"
+            }
+          }
+        }
+      }
+    },
+    "Beast of the Sky": {
+      "name": "Bête du Ciel",
+      "tokenName": "Beast of the Sky",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.classes.Item.phbrgrPrimalComp caption=false]</p>",
+      "items": {
+        "Flyby": {
+          "name": "Attaque en Vol",
+          "description": "<p> La bête ne provoque pas d'attaque d'opportunité lorsqu'elle s'éloigne hors de portée d'un ennemi en volant.</p>"
+        },
+        "Primal Bond": {
+          "name": "Primal Bond",
+          "description": "<p>Ajoutez votre bonus de maîtrise à tout test de caractéristique ou jet de sauvegarde que la bête effectue.</p><section class=\"secret\" id=\"secret-beTIv7xucaHGX104\"><p><strong>Note Foundry</strong></p><p>Ce bonus a été included in la bête's global bonuses.</p></section>"
+        },
+        "Beast's Strike": {
+          "name": "Beast's Strike",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d4 + 3 plus votre modificateur de Sagesse dégâts tranchants.</p>"
+        }
+      }
+    },
+    "Beholderkin Spirit": {
+      "name": "Esprit Beholderkin",
+      "tokenName": "Aberrant Spirit",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonAber caption=false]</p>",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Eye Ray": {
+          "name": "Eye Ray",
+          "description": "<p> <em>Jet d'attaque à distance :</em> Bonus égal à votre modificateur d'attaque de sort, portée 45 m <em>Touché :</em> 1d8 + 3 + le niveau du sort dégâts psychiques.</p>",
+          "activities": {
+            "Attack": {
+              "name": "Attaque"
+            }
+          }
+        }
+      }
+    },
+    "Bestial Air Spirit": {
+      "name": "Esprit Aérien Bestial",
+      "tokenName": "Esprit Bestial",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonBeas caption=false]</p>",
+      "items": {
+        "Flyby": {
+          "name": "Attaque en Vol",
+          "description": "<p> L'esprit ne provoque pas d'attaque d'opportunité lorsqu'il s'éloigne hors de portée d'un ennemi en volant.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques [[/item Rend]] égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Rend": {
+          "name": "Lacération",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 + 4 + le niveau du sort dégâts perforants.</p>"
+        }
+      }
+    },
+    "Bestial Land Spirit": {
+      "name": "Esprit Terrestre Bestial",
+      "tokenName": "Esprit Bestial",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonBeas caption=false]</p>",
+      "items": {
+        "Pack Tactics": {
+          "name": "Tactiques de Meute",
+          "description": "<p> L'esprit a l'Avantage aux jets d'attaque contre une créature si au moins un de ses alliés se trouve dans un rayon de 1,50 m de la cible et l'allié n'a pas l'état neutralisé.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques [[/item Rend]] égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Rend": {
+          "name": "Lacération",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 + 4 + le niveau du sort dégâts perforants.</p>"
+        }
+      }
+    },
+    "Bestial Spirit": {
+      "name": "Esprit Bestial",
+      "tokenName": "Esprit Bestial",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonBeas caption=false]</p>",
+      "items": {
+        "Flyby": {
+          "name": "Attaque en Vol",
+          "description": "<p> L'esprit ne provoque pas d'attaque d'opportunité lorsqu'il s'éloigne hors de portée d'un ennemi en volant.</p>"
+        },
+        "Pack Tactics": {
+          "name": "Tactiques de Meute",
+          "description": "<p> L'esprit a l'Avantage aux jets d'attaque contre une créature si au moins un de ses alliés se trouve dans un rayon de 1,50 m de la cible et l'allié n'a pas l'état neutralisé.</p>"
+        },
+        "Water Breathing": {
+          "name": "Respiration Aquatique",
+          "description": "<p> L'esprit peut respirer uniquement sous l'eau.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques [[/item Rend]] égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Rend": {
+          "name": "Lacération",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 + 4 + le niveau du sort dégâts perforants.</p>"
+        }
+      }
+    },
+    "Bestial Water Spirit": {
+      "name": "Esprit Aquatique Bestial",
+      "tokenName": "Esprit Bestial",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonBeas caption=false]</p>",
+      "items": {
+        "Pack Tactics": {
+          "name": "Tactiques de Meute",
+          "description": "<p> L'esprit a l'Avantage aux jets d'attaque contre une créature si au moins un de ses alliés se trouve dans un rayon de 1,50 m de la cible et l'allié n'a pas l'état neutralisé.</p>"
+        },
+        "Water Breathing": {
+          "name": "Respiration Aquatique",
+          "description": "<p> L'esprit peut respirer uniquement sous l'eau.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques [[/item Rend]] égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Rend": {
+          "name": "Lacération",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 + 4 + le niveau du sort dégâts perforants.</p>"
+        }
+      }
+    },
+    "Bigby's Hand": {
+      "name": "Main de Bigby",
+      "tokenName": "Bigby's Hand",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplBigbysHand caption=false]</p>",
+      "items": {
+        "Clenched Fist": {
+          "name": "Clenched Fist",
+          "description": "<p> La main a target dans un rayon de 1,50 m of it. Effectuez un jet d'attaque de sort au corps à corps. En cas de touché, la cible subit 5d8 dégâts de force.</p>"
+        },
+        "Forceful Hand": {
+          "name": "Forceful Hand",
+          "description": "<p>La main push a Très grande taille ou inférieure creature dans un rayon de 1,50 m of it. La cible must succeed on a Strength jet de sauvegarde, or the hand pushes la cible jusqu\\'à 1,50 m plus a number of feet equal to five times votre modificateur de caractéristique d'incantation. The hand moves with la cible, remaining dans un rayon de 1,50 m of it.</p>",
+          "activities": {
+            "save": {
+              "chatFlavor": "[[5 + 5 * @flags.dnd5e.summon.mod]] foot push"
+            }
+          }
+        },
+        "Grasping Hand": {
+          "name": "Grasping Hand",
+          "description": "<p>La main grapple a Très grande taille ou inférieure creature dans un rayon de 1,50 m of it. La cible must succeed on a Dexterity jet de sauvegarde, or la cible a l'état &amp;Reference[Grappled], avec une DC equal to your DD de sauvegarde de sort. While the hand grapples la cible, you can take a action bonus to cause the hand to crush it, dealing dégâts contondants to la cible égal à 4d6 plus votre modificateur de caractéristique d'incantation.</p><h3>Grapple Escape Tests</h3><p>[[/check ability=str skill=ath dc=8+@prof+@flags.dnd5e.summon.mod]]{Strength (Athletics)} [[/check ability=dex skill=acr dc=8+@prof+@flags.dnd5e.summon.mod]]{Dexterity (Acrobatics)}</p>",
+          "activities": {
+            "Grapple": {
+              "name": "Agripper"
+            },
+            "Crush": {
+              "name": "Écraser",
+              "condition": "has a creature grappled"
+            }
+          }
+        },
+        "Interposing Hand": {
+          "name": "Interposing Hand",
+          "description": "<p>La main vous accorde &amp;Reference[HalfCover]{couverture partielle} contre les attaques et autres effets qui émanent de son espace or that pass through it. De plus, son espace compte comme terrain difficileTerrain] for your enemies.</p>",
+          "activities": {
+            "Interpose": {
+              "name": "S'interposer"
+            }
+          },
+          "effects": {
+            "Half Cover": {
+              "name": "Couverture partielle"
+            },
+            "Interposed": {
+              "name": "Interposé",
+              "description": "<p>Granting you &amp;Reference[HalfCover]{couverture partielle} from attacks or effects qui traversent son espace.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Black Bear": {
+      "name": "Ours Noir",
+      "tokenName": "Black Bear",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'ours effectue two [[/item Rend]] attacks.</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Rend": {
+          "name": "Lacération",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> +4, allonge 1,50 m <em>Touché :</em> 5 (1d6 + 2) dégâts tranchants.</p>"
+        }
+      }
+    },
+    "Boar": {
+      "name": "Sanglier",
+      "tokenName": "Boar",
+      "items": {
+        "Bloodied Fury": {
+          "name": "Bloodied Fury",
+          "description": "<p> While à mi-points de vie, a l'Avantage aux jets d'attaque.</p>"
+        },
+        "Gore": {
+          "name": "Encornement",
+          "description": "<p><em>Jet d'attaque au corps à corps : </em>+3, allonge 1,50 m <em>Touché : </em>4 (1d6 + 1) dégâts perforants. If the boar moved at least 6 m straight toward la cible juste avant de le toucher, la cible takes an extra 3 (1d6) dégâts perforants and, si elle est de Taille Moyenne ou inférieure, has the &amp;Reference[Prone] condition.</p>",
+          "activities": {
+            "Charging Attack": {
+              "name": "Attaque en charge"
+            }
+          }
+        }
+      }
+    },
+    "Brown Bear": {
+      "name": "Ours Brun",
+      "tokenName": "Brown Bear",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'ours effectue one [[/item Bite]] attack et one [[/item Claw]] attack.</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +5, allonge 1,50 m <em>Touché :</em> 7 (1d8 + 3) dégâts perforants.</p>"
+        },
+        "Claw": {
+          "name": "Griffe",
+          "description": "<p><em>Jet d'attaque au corps à corps : </em>+5, allonge 1,50 m <em>Touché :</em> 5 (1d4 + 3) dégâts tranchants, et la cible a l'état &amp;Reference[prone] si elle est de Taille Moyenne ou inférieure.</p>"
+        }
+      }
+    },
+    "Camel": {
+      "name": "Chameau",
+      "tokenName": "Camel",
+      "items": {
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> +4, allonge 1,50 m <em>Touché :</em> 4 (1d4 + 2) dégâts contondants.</p>"
+        }
+      }
+    },
+    "Cat": {
+      "name": "Chat",
+      "tokenName": "Cat",
+      "items": {
+        "Jumper": {
+          "name": "Jumper",
+          "description": "<p>The cat’s distance de saut is determined using sa Dextérité plutôt que sa Force.</p>"
+        },
+        "Scratch": {
+          "name": "Scratch",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> +4, allonge 1,50 m <em>Touché :</em> 1 dégâts tranchants.</p>"
+        }
+      }
+    },
+    "Celestial Spirit": {
+      "name": "Esprit Céleste",
+      "tokenName": "Celestial Spirit",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonCele caption=false]</p>",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Radiant Bow": {
+          "name": "Radiant Bow",
+          "description": "<p><em>(Vengeur uniquement)</em></p><p><em>Jet d'attaque à distance :</em> Bonus égal à votre modificateur d'attaque de sort, portée 180 m <em>Touché :</em> 2d6 + 2 + le niveau du sort dégâts radiants.</p>"
+        },
+        "Radiant Mace": {
+          "name": "Masse Radieuse",
+          "description": "<p><em>(Défenseur uniquement)</em></p><p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d10 + 3 + le niveau du sort dégâts radiants, and l'esprit peut choisir itself or another creature qu'il peut voir dans un rayon de 3 m de la cible. The chosen creature gains [[/healing 1d10 type=temphp]]{1d10 Temporary points de vie}.</p>",
+          "activities": {
+            "Temporary Healing": {
+              "name": "Soin temporaire"
+            }
+          }
+        },
+        "Healing Touch": {
+          "name": "Toucher Guérisseur",
+          "description": "<p> L'esprit touche une autre créature. La cible récupère des points de vie égaux à 2d8 + le niveau du sort.</p>"
+        }
+      }
+    },
+    "Celestial Steed": {
+      "name": "Destrier Céleste",
+      "tokenName": "Destrier d'un Autre Monde",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplFindSteed0 caption=false]</p>",
+      "items": {
+        "Life Bond": {
+          "name": "Lien Vital",
+          "description": "<p> When you récupère points de vie from un sort de niveau 1 ou plus, la monture récupère the same number of points de vie if vous êtes dans un rayon de 1,50 m of it.</p>"
+        },
+        "Otherworldly Slam": {
+          "name": "Coup d'un Autre Monde",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 plus le niveau du sort of dégâts radiants.</p>"
+        },
+        "Healing Touch": {
+          "name": "Toucher Guérisseur",
+          "description": "<p> Une créature dans un rayon de 1,50 m of la monture récupère a number of points de vie égal à 2d8 plus le niveau du sort.</p>"
+        }
+      }
+    },
+    "Clay Construct Spirit": {
+      "name": "Esprit de Construct d'Argile",
+      "tokenName": "Esprit Artificiel",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonCons caption=false]</p>",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques [[/item Slam]] égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Slam": {
+          "name": "Coup",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 + 4 + le niveau du sort dégâts contondants.</p>"
+        },
+        "Berserk Lashing": {
+          "name": "Déchaînement Berserk",
+          "description": "<p><em>Déclencheur :</em> L'esprit subit des dégâts infligés par une créature. <em>Réponse :</em> L'esprit effectue a [[/item Slam]] attack against cette créature si possible, ou l'esprit moves jusqu'à la moitié de sa Vitesse toward cette créature without provoking attaque(s) d'opportunité.</p>",
+          "activities": {
+            "utility": {
+              "condition": "the spirit takes damage from a creature"
+            }
+          }
+        }
+      }
+    },
+    "Cleric": {
+      "name": "Clerc",
+      "tokenName": "Cleric",
+      "description": "<table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.5ay66aAVgkgRH7qH]{Step 1: Choose a Class}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Likes</th><th scope=\"col\">Primary Ability</th><th scope=\"col\">Complexity</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCleric0000000]{Cleric}</td><td>Gods</td><td>Wisdom</td><td>Average</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.t1WP9VEevo4TOTXw]{Step 2: Determine Origin}</caption><thead><tr><th scope=\"col\">Background</th><th scope=\"col\">Species</th><th scope=\"col\">Languages</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbbgGuard000000]{Guard}</td><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbspDwarf000000]{Dwarf}</td><td>Common Sign Language, Dwarvish</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.9o8NbQ1Ph2xCxlQh]{Step 3: Determine Ability Scores}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Str.</th><th scope=\"col\">Dex.</th><th scope=\"col\">Con.</th><th scope=\"col\">Int.</th><th scope=\"col\">Wis.</th><th scope=\"col\">Cha.</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.classes.Item.phbclcCleric0000]{Cleric}</td><td>14</td><td>8</td><td>13</td><td>10</td><td>15</td><td>12</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.6ThVICG0QSRy7L0F]{Step 4: Choose an Alignment}</caption><thead><tr><th scope=\"col\">Alignment</th><th scope=\"col\">Personality</th></tr></thead><tbody><tr><td>Lawful</td><td>Loyal</td></tr><tr><td>Good</td><td>Helpful</td></tr></tbody></table>"
+    },
+    "Conjured Air Elemental": {
+      "name": "Élémentaire d'Air Conjuré",
+      "tokenName": "Conjured Air Elemental",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplConjureEle caption=false]</p>"
+    },
+    "Conjured Animals": {
+      "name": "Animaux Conjurés",
+      "tokenName": "Conjured Animals",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplConjureAni caption=false]</p>",
+      "items": {
+        "Pack Damage": {
+          "name": "Pack Damage",
+          "description": "<p>Whenever the pack se déplace dans un rayon de 3 m of une créature que vous pouvez voir et whenever une créature que vous pouvez voir enters a space dans un rayon de 3 m of the pack ou y termine son tour, vous pouvez forcer cette créature à make a Dexterity jet de sauvegarde. En cas de jet de sauvegarde raté, la créature subit 3d10 dégâts tranchants. A creature makes this save only once per turn.</p>",
+          "activities": {
+            "save": {
+              "condition": "visible creature moves or ends its turn within 10 feet of the pack"
+            }
+          }
+        }
+      }
+    },
+    "Conjured Earth Elemental": {
+      "name": "Élémentaire de Terre Conjuré",
+      "tokenName": "Conjured Earth Elemental",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplConjureEle caption=false]</p>",
+      "items": {
+        "Earth Element": {
+          "name": "Earth Element",
+          "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplConjureEle caption=false]</p>",
+          "activities": {
+            "Initial Save": {
+              "name": "Jet de sauvegarde initial",
+              "condition": "a creature you can see enters the spirit’s space or starts its turn within 5 feet of the spirit"
+            },
+            "Save while Restrained": {
+              "name": "Jet de sauvegarde entravé",
+              "condition": "a creature you can see enters the spirit’s space or starts its turn within 5 feet of the spirit"
+            }
+          },
+          "effects": {
+            "Restrained": {
+              "name": "Entravé",
+              "description": "<p>Au début de chacun de ses tours, the cible &amp;Reference[Restrained apply=false] refait le jet de sauvegarde. En cas de jet de sauvegarde raté, la cible takes 4d8 (plus 2d8 for each spell slot level above 5) damage of the spirit’s type. En cas de jet de sauvegarde réussi, la cible isn’t Restrained by the spirit.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Conjured Fey": {
+      "name": "Fey Conjuré",
+      "tokenName": "Conjured Fey",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplConjureFey caption=false]</p>",
+      "items": {
+        "Command": {
+          "name": "Command",
+          "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplConjureFey caption=false]</p>",
+          "activities": {
+            "attack": {
+              "condition": "upon appearing"
+            },
+            "Teleport and Attack": {
+              "name": "Téléportation et Attaque"
+            }
+          },
+          "effects": {
+            "Frightened": {
+              "name": "Effrayé",
+              "description": "<p>La cible has the &amp;Reference[Frightened apply=false] condition until the start of your next turn, with both you and the spirit as the source of the fear.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Conjured Fire Elemental": {
+      "name": "Élémentaire de Feu Conjuré",
+      "tokenName": "Élémentaire de Feu Conjuré",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplConjureEle caption=false]</p>",
+      "items": {
+        "Fire Element": {
+          "name": "Élément de Feu",
+          "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplConjureEle caption=false]</p>",
+          "activities": {
+            "Initial Save": {
+              "name": "Jet de sauvegarde initial",
+              "condition": "a creature you can see enters the spirit’s space or starts its turn within 5 feet of the spirit"
+            },
+            "Save while Restrained": {
+              "name": "Jet de sauvegarde entravé",
+              "condition": "a creature you can see enters the spirit’s space or starts its turn within 5 feet of the spirit"
+            }
+          },
+          "effects": {
+            "Restrained": {
+              "name": "Entravé",
+              "description": "<p>Au début de chacun de ses tours, the cible &amp;Reference[Restrained apply=false] refait le jet de sauvegarde. En cas de jet de sauvegarde raté, la cible takes 4d8 (plus 2d8 for each spell slot level above 5) damage of the spirit’s type. En cas de jet de sauvegarde réussi, la cible isn’t Restrained by the spirit.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Conjured Water Elemental": {
+      "name": "Élémentaire d'Eau Conjuré",
+      "tokenName": "Élémentaire d'Eau Conjuré",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplConjureEle caption=false]</p>",
+      "items": {
+        "Water Element": {
+          "name": "Élément d'Eau",
+          "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplConjureEle caption=false]</p>",
+          "activities": {
+            "Initial Save": {
+              "name": "Jet de sauvegarde initial",
+              "condition": "a creature you can see enters the spirit’s space or starts its turn within 5 feet of the spirit"
+            },
+            "Save while Restrained": {
+              "name": "Jet de sauvegarde entravé",
+              "condition": "a creature you can see enters the spirit’s space or starts its turn within 5 feet of the spirit"
+            }
+          },
+          "effects": {
+            "Restrained": {
+              "name": "Entravé",
+              "description": "<p>Au début de chacun de ses tours, the cible &amp;Reference[Restrained apply=false] refait le jet de sauvegarde. En cas de jet de sauvegarde raté, la cible takes 4d8 (plus 2d8 for each spell slot level above 5) damage of the spirit’s type. En cas de jet de sauvegarde réussi, la cible isn’t Restrained by the spirit.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Constrictor Snake": {
+      "name": "Serpent Constricteur",
+      "tokenName": "Serpent Constricteur",
+      "items": {
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +4, allonge 1,50 m <em>Touché : </em>6 (1d8 + 2) dégâts perforants.</p>"
+        },
+        "Constrict": {
+          "name": "Constriction",
+          "description": "<p><em>Jet de sauvegarde de Force :</em> DD 12, une créature de Taille Moyenne ou inférieure que la créature peut voir dans un rayon de 1,50 m. <em>Échec :</em> 7 (3d4) dégâts contondants, et la cible a l'état &amp;Reference[grappled] (escape DD 12).</p>"
+        }
+      }
+    },
+    "Construct Spirit": {
+      "name": "Esprit Artificiel",
+      "tokenName": "Esprit Artificiel",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonCons caption=false]</p>",
+      "items": {
+        "Stony Lethargy": {
+          "name": "Léthargie de Pierre",
+          "description": "<p> Quand une créature commence son tour dans un rayon de 3 m de l'esprit, l'esprit peut le cibler avec de l'énergie magique if the spirqu'il peut voir it. <em>Jet de sauvegarde de Sagesse :</em> DD égal à votre DD de sauvegarde de sort, la cible. <em>Échec :</em> Jusqu'au début de son prochain tour, la cible ne peut pas make attaque(s) d'opportunité, and its Vitesse est réduite de moitié.</p>",
+          "effects": {
+            "Stony Lethargy": {
+              "name": "Léthargie de pierre",
+              "description": "<p><span style=\"font-family:Signika, sans-serif\">Jusqu'au début de son prochain tour, la cible ne peut pas make attaque(s) d'opportunité, and its Vitesse est réduite de moitié.</span></p>"
+            }
+          }
+        },
+        "Heated Body": {
+          "name": "Corps Incandescent",
+          "description": "<p> Une créature qui touche l'esprit avec une attaque au corps à corps or that starts its turn in a agripper l'esprit subit 1d10 dégâts de feu.</p>",
+          "activities": {
+            "Contact Damage": {
+              "name": "Dégâts au contact"
+            }
+          }
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques [[/item Slam]] égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Slam": {
+          "name": "Coup",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 + 4 + le niveau du sort dégâts contondants.</p>"
+        },
+        "Berserk Lashing": {
+          "name": "Déchaînement Berserk",
+          "description": "<p><em>Déclencheur :</em> L'esprit subit des dégâts infligés par une créature. <em>Réponse :</em> L'esprit effectue a [[/item Slam]] attack against cette créature si possible, ou l'esprit moves jusqu'à la moitié de sa Vitesse toward cette créature without provoking attaque(s) d'opportunité.</p>",
+          "activities": {
+            "Attack or Move": {
+              "name": "Attaque ou Déplacement",
+              "condition": "The spirit takes damage from a creature."
+            }
+          }
+        }
+      }
+    },
+    "Crab": {
+      "name": "Crabe",
+      "tokenName": "Crabe",
+      "items": {
+        "Amphibious": {
+          "name": "Amphibie",
+          "description": "<p> Le crab peut respirer l'air et l'eau.</p>"
+        },
+        "Claw": {
+          "name": "Griffe",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +2, allonge 1,50 m <em>Touché : </em>1 dégâts contondants.</p>"
+        }
+      }
+    },
+    "Crocodile": {
+      "name": "Crocodile",
+      "tokenName": "Crocodile",
+      "items": {
+        "Hold Breath": {
+          "name": "Retenir son Souffle",
+          "description": "<p>Le crocodile peut retenir son souffle pendant 1 heure.</p>"
+        },
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +4, allonge 1,50 m <em>Touché :</em> 6 (1d8 + 2) dégâts perforants. If la cible is Taille Moyenne ou inférieure, it has l'état &amp;Reference[grappled apply=false] (DD d'évasion 12). While Grappled, la cible has the &amp;Reference[restrained apply=false] condition.</p>",
+          "effects": {
+            "Grappled": {
+              "name": "Agrippé",
+              "description": "<p>Tant qu'elle est &amp;Reference[Grappled apply=false] (escape DD 12), la cible a l'état &amp;Reference[Restrained apply=false].</p>"
+            }
+          }
+        }
+      }
+    },
+    "Dancing Light (Medium)": {
+      "name": "Lumière Dansante (M)",
+      "tokenName": "Dancing Light",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplDancingLig caption=false]</p>"
+    },
+    "Dancing Light (Tiny)": {
+      "name": "Lumière Dansante (TP)",
+      "tokenName": "Dancing Light",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplDancingLig caption=false]</p>"
+    },
+    "Defender Spirit": {
+      "name": "Esprit Défenseur",
+      "tokenName": "Celestial Spirit",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonCele caption=false]</p>",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Radiant Mace": {
+          "name": "Masse Radieuse",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d10 + 3 + le niveau du sort dégâts radiants, and l'esprit peut choisir itself or another creature qu'il peut voir dans un rayon de 3 m de la cible. The chosen creature gains [[/healing 1d10 type=temphp]]{1d10 Temporary points de vie}.</p>",
+          "activities": {
+            "Temporary Healing": {
+              "name": "Soin temporaire",
+              "condition": "on hit with Radiant Mace"
+            }
+          }
+        },
+        "Healing Touch": {
+          "name": "Toucher Guérisseur",
+          "description": "<p> L'esprit touche une autre créature. La cible récupère des points de vie égaux à 2d8 + le niveau du sort.</p>"
+        }
+      }
+    },
+    "Demon Spirit": {
+      "name": "Esprit Démon",
+      "tokenName": "Esprit Fiélon",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonFien caption=false]</p>",
+      "items": {
+        "Death Throes": {
+          "name": "Affres de la Mort",
+          "description": "<p>Quand l'esprit tombe à 0 point de vie ou que le sort prend fin, l'esprit explose. <em>Jet de sauvegarde de Dextérité :</em> DD égal à votre DD de sauvegarde de sort, chaque créature dans une Émanation de 3 m émanant de l'esprit. <em>Échec :</em> 2d10 plus le niveau de ce sort dégâts de feu. <em>Réussite :</em> Moitié des dégâts.</p>",
+          "activities": {
+            "Explode": {
+              "name": "Exploser",
+              "condition": "when the spirit drops to 0 Hit Points or the spell ends"
+            }
+          }
+        },
+        "Magic Resistance": {
+          "name": "Résistance à la Magie",
+          "description": "<p> L'esprit a l'Avantage on jet de sauvegardes against spells et other magical effects.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m Hit: 1d12 + 3 + le niveau du sort dégâts nécrotiques.</p>"
+        }
+      }
+    },
+    "Devil Spirit": {
+      "name": "Esprit Diable",
+      "tokenName": "Esprit Fiélon",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonFien caption=false]</p>",
+      "items": {
+        "Devil’s Sight": {
+          "name": "Devil’s Sight",
+          "description": "<p> L'obscurité magique n'entrave pas la Vision dans le noir de l'esprit..</p>"
+        },
+        "Magic Resistance": {
+          "name": "Résistance à la Magie",
+          "description": "<p> L'esprit a l'Avantage on jet de sauvegardes against spells et other magical effects.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Fiery Strike": {
+          "name": "Frappe de Feu",
+          "description": "<p><em>Jet d'attaque au corps à corps ou à distance :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m or portée 45 m <em>Touché :</em> 2d6 + 3 + le niveau du sort dégâts de feu.</p>",
+          "activities": {
+            "Melee Attack": {
+              "name": "Attaque au corps à corps"
+            },
+            "Ranged Attack": {
+              "name": "Attaque à distance"
+            }
+          }
+        }
+      }
+    },
+    "Dire Wolf": {
+      "name": "Loup Sinistre",
+      "tokenName": "Loup Sinistre",
+      "items": {
+        "Pack Tactics": {
+          "name": "Tactiques de Meute",
+          "description": "<p>Le loup a l'Avantage aux jets d'attaque contre une créature si au moins un de ses alliés se trouve dans un rayon de 1,50 m de la cible et l'allié n'a pas l'état neutralisé.</p>"
+        },
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p><em>Jet d'attaque au corps à corps : </em>+5, allonge 1,50 m <em>Touché : </em>8 (1d10 + 3) dégâts perforants, et la cible a l'état &amp;Reference[prone] si elle est de Taille Moyenne ou inférieure.</p>"
+        }
+      }
+    },
+    "Draconic Spirit": {
+      "name": "Esprit Draconique",
+      "tokenName": "Esprit Draconique",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonDrag caption=false]</p>",
+      "items": {
+        "Shared Resistances": {
+          "name": "Résistances Partagées",
+          "description": "<p>Lorsque vous invoquez l'esprit, choisissez l'une de ses Résistances. Vous avez la Résistance au type de dégâts choisi jusqu'à la fin du sort.</p><section id=\"secret-FlNLM1mGXlBLAFfA\" class=\"secret\"><p><strong>Note Foundry</strong></p><p>Active effects et activities applying those effects on this item are provided for optional application of the chosen résistance.</p></section>",
+          "activities": {
+            "Share Acid Resistance": {
+              "name": "Partager la résistance à l'acide"
+            },
+            "Share Cold Resistance": {
+              "name": "Partager la résistance au froid"
+            },
+            "Share Fire Resistance": {
+              "name": "Partager la résistance au feu"
+            },
+            "Share Lightning Resistance": {
+              "name": "Partager la résistance à la foudre"
+            },
+            "Share Poison Resistance": {
+              "name": "Partager la résistance au poison"
+            }
+          },
+          "effects": {
+            "Shared Acid Resistance": {
+              "name": "Résistance à l'acide partagée"
+            },
+            "Shared Cold Resistance": {
+              "name": "Résistance au froid partagée"
+            },
+            "Shared Fire Resistance": {
+              "name": "Résistance au feu partagée"
+            },
+            "Shared Lightning Resistance": {
+              "name": "Résistance à la foudre partagée"
+            },
+            "Shared Poison Resistance": {
+              "name": "Résistance au poison partagée"
+            }
+          }
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques [[/item Rend]] égal à la moitié du niveau du sort (round down), et utilise [[/item Breath Weapon]].</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Rend": {
+          "name": "Lacération",
+          "description": "<p><em>Corps à corps : </em>Bonus égal à votre modificateur d'attaque de sort, allonge 3 m. <em>Touché : </em>1d6 + 4 + le niveau du sort dégâts perforants.</p>"
+        },
+        "Breath Weapon": {
+          "name": "Arme de Souffle",
+          "description": "<p><em>Jet de sauvegarde de Dextérité : </em>DD égal à votre DD de sauvegarde de sort, chaque créature dans un Cône de 9 m. <em>Échec : </em>2d6 damage of a type this spirit has Résistance to (your choice lorsque vous lancez le spell). <em>Success: </em>Moitié des dégâts.</p>"
+        }
+      }
+    },
+    "Draft Horse": {
+      "name": "Cheval de Trait",
+      "tokenName": "Cheval de Trait",
+      "items": {
+        "Hooves": {
+          "name": "Sabots",
+          "description": "<p><em>Jet d'attaque au corps à corps : </em>+6, allonge 1,50 m <em>Touché :</em> 6 (1d4 + 4) dégâts contondants.</p>"
+        }
+      }
+    },
+    "Druid": {
+      "name": "Druide",
+      "tokenName": "Druide",
+      "description": "<table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.5ay66aAVgkgRH7qH]{Step 1: Choose a Class}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Likes</th><th scope=\"col\">Primary Ability</th><th scope=\"col\">Complexity</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbDruid00000000]{Druid}</td><td>Nature</td><td>Wisdom</td><td>High</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.t1WP9VEevo4TOTXw]{Step 2: Determine Origin}</caption><thead><tr><th scope=\"col\">Background</th><th scope=\"col\">Species</th><th scope=\"col\">Languages</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbbgFarmer00000]{Farmer}</td><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbspHuman000000]{Human}</td><td>Elvish, Halfling</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.9o8NbQ1Ph2xCxlQh]{Step 3: Determine Ability Scores}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Str.</th><th scope=\"col\">Dex.</th><th scope=\"col\">Con.</th><th scope=\"col\">Int.</th><th scope=\"col\">Wis.</th><th scope=\"col\">Cha.</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.classes.Item.phbdrdDruid00000]{Druid}</td><td>8</td><td>12</td><td>14</td><td>13</td><td>15</td><td>10</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.6ThVICG0QSRy7L0F]{Step 4: Choose an Alignment}</caption><thead><tr><th scope=\"col\">Alignment</th><th scope=\"col\">Personality</th></tr></thead><tbody><tr><td>Neutral</td><td>Disinterested</td></tr><tr><td>Good</td><td>Honest</td></tr></tbody></table>"
+    },
+    "Duplicate": {
+      "name": "Duplicata",
+      "tokenName": "Duplicata"
+    },
+    "Earth Elemental Spirit": {
+      "name": "Esprit Élémentaire de Terre",
+      "tokenName": "Esprit Élémentaire",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonElem caption=false]</p>",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques [[/item Slam]] égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Slam": {
+          "name": "Coup",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d10 + 4 + le niveau du sort dégâts contondants.</p>"
+        }
+      }
+    },
+    "Elemental Spirit": {
+      "name": "Esprit Élémentaire",
+      "tokenName": "Esprit Élémentaire",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonElem caption=false]</p>",
+      "items": {
+        "Amorphous Form": {
+          "name": "Forme Amorphe",
+          "description": "<p> L'esprit peut traverser un espace aussi étroit que de largeur 2,5 cm sans que cela compte comme terrain difficile.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques [[/item Slam]] égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Slam": {
+          "name": "Coup",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d10 + 4 + le niveau du sort Bludgeoning (Terre uniquement), Cold (Eau uniquement), Lightning (Air uniquement), or Fire (Feu uniquement) damage.</p>"
+        }
+      }
+    },
+    "Elephant": {
+      "name": "Éléphant",
+      "tokenName": "Éléphant",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'éléphant effectue deux [[/item Gore]] attacks.</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Gore": {
+          "name": "Encornement",
+          "description": "<p><em>Jet d'attaque au corps à corps : </em>+8, allonge 1,50 m <em>Touché :</em> 15 (2d8 + 6) dégâts perforants. If the elephant moved at least 6 m straight toward la cible juste avant de le toucher, la cible also has l'état &amp;Reference[prone].</p>"
+        },
+        "Trample": {
+          "name": "Piétinement",
+          "description": "<p> <em>Jet de sauvegarde de Dextérité :</em> DD 16, une créature dans un rayon de 1,50 m qui a l'état à terre. <em>Échec :</em> 17 (2d10 + 6) dégâts contondants. <em>Réussite :</em> Moitié des dégâts.</p>"
+        }
+      }
+    },
+    "Elk": {
+      "name": "Élan",
+      "tokenName": "Élan",
+      "items": {
+        "Ram": {
+          "name": "Coup de Corne",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +5, allonge 1,50 m <em>Touché : </em>6 (1d6 + 3) dégâts contondants. If the elk moved at least 6 m straight toward la cible juste avant de le toucher, la cible takes an extra 3 (1d6) dégâts contondants and, si elle est de Taille Moyenne ou inférieure, has l'état &amp;Reference[prone].</p>",
+          "activities": {
+            "Charging Attack": {
+              "name": "Attaque en charge"
+            }
+          }
+        }
+      }
+    },
+    "Faithful Hound": {
+      "name": "Chien Fidèle",
+      "tokenName": "Chien Fidèle",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbFaithfulHound caption=false]</p>",
+      "items": {
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p>Au début de chacun de vos tours, le chien tente de mordre un ennemi dans un rayon de 1,50 m of it. That enemy must succeed on a Dexterity jet de sauvegarde or subit 4d8 dégâts de force.</p>",
+          "activities": {
+            "save": {
+              "condition": "start of your turn"
+            }
+          }
+        }
+      }
+    },
+    "Fey Spirit": {
+      "name": "Esprit Féérique",
+      "tokenName": "Esprit Féérique",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonFey0 caption=false]</p>",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue a number of [[/item Fey Blade]] attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Fey Blade": {
+          "name": "Lame Féérique",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 2d6 + 3 + le niveau du sort dégâts de force.</p>"
+        },
+        "Fey Step": {
+          "name": "Pas Féérique",
+          "description": "<p>L'esprit se téléporte magiquement jusqu\\'à 9 m vers un espace inoccupé qu'il peut voir. Puis l'un des effets suivants se produit, based on the spirc'est humeur choisie:</p><p><strong>Furieux.</strong></p><p>L'esprit a l'Avantage on the next jet d'attaque it makes before the end of this turn.</p><p><strong>[[/item Mirthful]]</strong> @Embed[.phbaoiMirthful00 caption=false cite=false]</p><p><strong>[[/item Tricksy]]</strong> @Embed[.phbaoiTricksy000 caption=false cite=false]</p>",
+          "activities": {
+            "Teleport": {
+              "name": "Téléportation"
+            }
+          }
+        },
+        "Mirthful": {
+          "name": "Joyeux",
+          "description": "<p><em>Jet de sauvegarde de Sagesse :</em> DD égal à votre DD de sauvegarde de sort, une créature the spirqu'il peut voir dans un rayon de 3 m of itself. <em>Échec :</em> La cible est &amp;Reference[charmed apply=false] by you and l'esprit pendant 1 minute ou jusqu'à ce que la cible subisse des dégâts.</p>",
+          "effects": {
+            "Charmed": {
+              "name": "Charmé",
+              "description": "<p>La cible est &amp;Reference[charmed apply=false] by you and the spirit pendant 1 minute ou jusqu'à ce que la cible subisse des dégâts.</p>"
+            }
+          }
+        },
+        "Tricksy": {
+          "name": "Malicieux",
+          "description": "<p>L'esprit remplit un Cube de 3 m dans un rayon de 1,50 m of it with obscurité magique &amp;Reference[darkness], qui dure jusqu'à la fin de son prochain tour.</p>"
+        }
+      }
+    },
+    "Fey Steed": {
+      "name": "Destrier Féérique",
+      "tokenName": "Destrier d'un Autre Monde",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplFindSteed0 caption=false]</p>",
+      "items": {
+        "Life Bond": {
+          "name": "Lien Vital",
+          "description": "<p> When you récupère points de vie from un sort de niveau 1 ou plus, la monture récupère the same number of points de vie if vous êtes dans un rayon de 1,50 m of it.</p>"
+        },
+        "Otherworldly Slam": {
+          "name": "Coup d'un Autre Monde",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 plus le niveau du sort of dégâts psychiques.</p>"
+        },
+        "Fey Step": {
+          "name": "Pas Féérique",
+          "description": "<p> La monture teleports, ainsi que son cavalier, vers un espace inoccupé de votre choix jusqu\\'à 18 m away from itself.</p>",
+          "activities": {
+            "Teleport": {
+              "name": "Téléportation"
+            }
+          }
+        }
+      }
+    },
+    "Fiend Steed": {
+      "name": "Destrier Fiélon",
+      "tokenName": "Destrier d'un Autre Monde",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplFindSteed0 caption=false]</p>",
+      "items": {
+        "Life Bond": {
+          "name": "Lien Vital",
+          "description": "<p> When you récupère points de vie from un sort de niveau 1 ou plus, la monture récupère the same number of points de vie if vous êtes dans un rayon de 1,50 m of it.</p>"
+        },
+        "Otherworldly Slam": {
+          "name": "Coup d'un Autre Monde",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 plus le niveau du sort of dégâts nécrotiques.</p>"
+        },
+        "Fell Glare": {
+          "name": "Regard Sinistre",
+          "description": "<p><em>Jet de sauvegarde de Sagesse :</em> DD égal à votre DD de sauvegarde de sort, une créature dans un rayon de 18 m la monture peut voir. <em>Échec :</em> La cible a l'état &amp;Reference[frightened] until the end of your next turn.</p>",
+          "effects": {
+            "Frightened": {
+              "name": "Effrayé"
+            }
+          }
+        }
+      }
+    },
+    "Fiendish Spirit": {
+      "name": "Esprit Fiélon",
+      "tokenName": "Esprit Fiélon",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonFien caption=false]</p>",
+      "items": {
+        "Death Throes": {
+          "name": "Affres de la Mort",
+          "description": "<p>Quand l'esprit tombe à 0 point de vie ou que le sort prend fin, l'esprit explose. <em>Jet de sauvegarde de Dextérité :</em> DD égal à votre DD de sauvegarde de sort, chaque créature dans une Émanation de 3 m émanant de l'esprit. <em>Échec :</em> 2d10 plus le niveau de ce sort dégâts de feu. <em>Réussite :</em> Moitié des dégâts.</p>",
+          "activities": {
+            "Explode": {
+              "name": "Exploser",
+              "condition": "when the spirit drops to 0 Hit Points or the spell ends"
+            }
+          }
+        },
+        "Devil’s Sight": {
+          "name": "Devil’s Sight",
+          "description": "<p> L'obscurité magique n'entrave pas la Vision dans le noir de l'esprit..</p>"
+        },
+        "Magic Resistance": {
+          "name": "Résistance à la Magie",
+          "description": "<p> L'esprit a l'Avantage on jet de sauvegardes against spells et other magical effects.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Bite (Demon Only)": {
+          "name": "Morsure (Démon uniquement)",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m Hit: 1d12 + 3 + le niveau du sort dégâts nécrotiques.</p>"
+        },
+        "Claws (Yugoloth Only)": {
+          "name": "Griffes (Yugoloth uniquement)",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 + 3 + le niveau du sort dégâts tranchants. Immediately after the touche ou rate, l'esprit peut teleport jusqu\\'à 9 m vers un espace inoccupé qu'il peut voir.</p>",
+          "activities": {
+            "Attack and Teleport": {
+              "name": "Attaque et Téléportation"
+            }
+          }
+        },
+        "Fiery Strike (Devil Only)": {
+          "name": "Frappe de Feu (Diable uniquement)",
+          "description": "<p><em>Jet d'attaque au corps à corps ou à distance :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m or portée 45 m <em>Touché :</em> 2d6 + 3 + le niveau du sort dégâts de feu.</p>",
+          "activities": {
+            "Melee Attack": {
+              "name": "Attaque au corps à corps"
+            },
+            "Ranged Attack": {
+              "name": "Attaque à distance"
+            }
+          }
+        }
+      }
+    },
+    "Fighter": {
+      "name": "Guerrier",
+      "tokenName": "Guerrier",
+      "description": "<table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.5ay66aAVgkgRH7qH]{Step 1: Choose a Class}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Likes</th><th scope=\"col\">Primary Ability</th><th scope=\"col\">Complexity</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbFighter000000]{Fighter}</td><td>Weapons</td><td>Strength or Dexterity</td><td>Low</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.t1WP9VEevo4TOTXw]{Step 2: Determine Origin}</caption><thead><tr><th scope=\"col\">Background</th><th scope=\"col\">Species</th><th scope=\"col\">Languages</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbbgSoldier0000]{Soldier}</td><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbspDwarf000000]{Dwarf}</td><td>Orc, Dwarvish</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.9o8NbQ1Ph2xCxlQh]{Step 3: Determine Ability Scores}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Str.</th><th scope=\"col\">Dex.</th><th scope=\"col\">Con.</th><th scope=\"col\">Int.</th><th scope=\"col\">Wis.</th><th scope=\"col\">Cha.</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.classes.Item.phbftrFighter000]{Fighter}</td><td>15</td><td>14</td><td>13</td><td>8</td><td>10</td><td>12</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.6ThVICG0QSRy7L0F]{Step 4: Choose an Alignment}</caption><thead><tr><th scope=\"col\">Alignment</th><th scope=\"col\">Personality</th></tr></thead><tbody><tr><td>Neutral</td><td>Pragmatic</td></tr><tr><td>Good</td><td>Kind</td></tr></tbody></table>"
+    },
+    "Fire Elemental Spirit": {
+      "name": "Esprit Élémentaire de Feu",
+      "tokenName": "Esprit Élémentaire",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonElem caption=false]</p>",
+      "items": {
+        "Amorphous Form": {
+          "name": "Forme Amorphe",
+          "description": "<p> L'esprit peut traverser un espace aussi étroit que de largeur 2,5 cm sans que cela compte comme terrain difficile.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques [[/item Slam]] égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Slam": {
+          "name": "Coup",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d10 + 4 + le niveau du sort dégâts de feu.</p>"
+        }
+      }
+    },
+    "Flaming Sphere": {
+      "name": "Sphère de Feu",
+      "tokenName": "Sphère de Feu",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplFlamingSph caption=false]</p>",
+      "items": {
+        "Flames": {
+          "name": "Flammes",
+          "description": "<p>You create une sphère de 1,50 m de diamètre of fire in an espace inoccupé au sol à portée. It lasts pendant toute la durée. Any creature that ends its turn dans un rayon de 1,50 m of the sphere makes a Dexterity jet de sauvegarde, taking 2d6 dégâts de feu en cas de jet de sauvegarde raté or la moitié des dégâts en cas de réussiteful one.</p>",
+          "activities": {
+            "save": {
+              "condition": "Any creature ends its turn within range"
+            }
+          }
+        },
+        "Roll": {
+          "name": "Roulement",
+          "description": "<p>En tant qu'action bonus, vous pouvez déplacer le sphere jusqu\\'à 9 m, en le faisant rouler au sol. If you move the sphere into une créature’s space, cette créature effectue le jet de sauvegarde contre la sphère, et la sphère cesse de se déplacer for the turn.</p><p>When you move the sphere, you can direct it over barriers jusqu\\'à 1,50 m tall et jump it across pits jusqu\\'à 3 m wide. Flammable objects that aren’t being worn or carried start burning if touched by the sphere.</p>",
+          "activities": {
+            "Move and Save": {
+              "name": "Déplacer et sauvegarder"
+            }
+          }
+        }
+      }
+    },
+    "Floating Disk": {
+      "name": "Disque Flottant",
+      "tokenName": "Disque Flottant",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplTensersFlo caption=false]</p>",
+      "items": {
+        "Carry Weight Adjustment": {
+          "name": "Ajustement de Charge",
+          "description": "<section id=\"secret-xvPfZzVKWfhDyIwx\" class=\"secret\"><p><strong>Note Foundry</strong></p><p>Cet item sert à ajuster la capacité de charge calculée du disque de 510 lb à 500 lb conformément à la description du sort.</p></section>"
+        }
+      }
+    },
+    "Frog": {
+      "name": "Grenouille",
+      "tokenName": "Grenouille",
+      "items": {
+        "Amphibious": {
+          "name": "Amphibie",
+          "description": "<p> Le frog peut respirer l'air et l'eau.</p>"
+        },
+        "Standing Leap": {
+          "name": "Bond Debout",
+          "description": "<p>The frog’s Saut en longueur is jusqu\\'à 3 m and its Saut en hauteur is jusqu\\'à 1,50 m avec ou sans élan.</p>"
+        },
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> +3, allonge 1,50 m <em>Touché :</em> 1 dégâts perforants.</p>"
+        }
+      }
+    },
+    "Fuming Fey Spirit": {
+      "name": "Esprit Féérique Fumant",
+      "tokenName": "Esprit Féérique",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonFey0 caption=false]</p>",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue a number of [[/item Fey Blade]] attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Fey Blade": {
+          "name": "Lame Féérique",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 2d6 + 3 + le niveau du sort dégâts de force.</p>"
+        },
+        "Fey Step": {
+          "name": "Pas Féérique",
+          "description": "<p>L'esprit se téléporte magiquement jusqu\\'à 9 m vers un espace inoccupé qu'il peut voir. Puis l'effet suivant se produit, based on the spirc'est humeur choisie:</p><p><strong>Furieux. </strong>L'esprit a l'Avantage on the next jet d'attaque it makes before the end of this turn.</p>",
+          "activities": {
+            "Fuming Teleport": {
+              "name": "Téléportation furieuse"
+            }
+          }
+        }
+      }
+    },
+    "Galley": {
+      "name": "Galère",
+      "tokenName": "Galère",
+      "description": "<p><strong>Vitesse:</strong> 4 mph</p><p><strong>Crew:</strong> 80</p><p><strong>Passengers:</strong> —</p><p><strong>Cargo (Tons):</strong> 150</p><p><strong>AC:</strong> 15</p><p><strong>HP:</strong> 500</p><p><strong>Damage Threshold:</strong> 20</p><p><strong>Cost:</strong> 30,000 GP</p>"
+    },
+    "Ghostly Spirit": {
+      "name": "Esprit Fantomatique",
+      "tokenName": "Esprit Mort-Vivant",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonUnde caption=false]</p>",
+      "items": {
+        "Incorporeal Passage": {
+          "name": "Déplacement Incorporel",
+          "description": "<p>L'esprit peut traverser other creatures et objects as if they were &amp;Reference[difficultterrain]. S'il termine son tour à l'intérieur d'un objet, it est repoussé vers the nearest espace inoccupé et takes [[/damage 1d10 type=force]] damage for every 1,50 m traveled.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Deathly Touch": {
+          "name": "Toucher Mortel",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 + 3 + le niveau du sort dégâts nécrotiques, et la cible a l'état &amp;Reference[frightened apply=false] jusqu'à la fin de son prochain tour.</p>",
+          "effects": {
+            "Frightened": {
+              "name": "Effrayé",
+              "description": "<p>The &amp;Reference[frightened apply=false] condition jusqu'à la fin de son prochain tour.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Giant Badger": {
+      "name": "Blaireau Géant",
+      "tokenName": "Blaireau Géant",
+      "items": {
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +3, allonge 1,50 m <em>Touché :</em> 6 (2d4 + 1) dégâts perforants.</p>"
+        }
+      }
+    },
+    "Giant Centipede": {
+      "name": "Mille-Pattes Géant",
+      "tokenName": "Insecte Géant",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplGiantInsec caption=false]</p>",
+      "items": {
+        "Spider Climb": {
+          "name": "Escalade Murale",
+          "description": "<p> Le insect peut escalader des surfaces difficiles, y compris les plafonds, without needing to make an test de caractéristique.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'insecte effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Poison Jab": {
+          "name": "Piqûre Venimeuse",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 3 m <em>Touché :</em> 1d6 + 3 plus le niveau du sort dégâts perforants plus 1d4 dégâts de poison.</p>"
+        },
+        "Venomous Spew": {
+          "name": "Crachat Venimeux",
+          "description": "<p><em>Jet de sauvegarde de Constitution :</em> DD de votre sort, une créature the insect peut voir dans un rayon de 3 m. <em>Échec :</em> La cible a l'état &amp;Reference[Poisoned apply=false] until the start of the insect’s next turn.</p>",
+          "effects": {
+            "Poisoned": {
+              "name": "Empoisonné",
+              "description": "<p>La cible a l'état &amp;Reference[Poisoned apply=false] until the start of the insect’s next turn.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Giant Crab": {
+      "name": "Crabe Géant",
+      "tokenName": "Crabe Géant",
+      "items": {
+        "Amphibious": {
+          "name": "Amphibie",
+          "description": "<p> Le crab peut respirer l'air et l'eau.</p>"
+        },
+        "Claw": {
+          "name": "Griffe",
+          "description": "<p><em>Jet d'attaque au corps à corps : </em>+3, allonge 1,50 m <em>Touché :</em> 4 (1d6 + 1) dégâts contondants. If la cible is Taille Moyenne ou inférieure, it has l'état &amp;Reference[grappled] (escape DD 11). Le crabe has two claws, each of which can grapple one target.</p>"
+        }
+      }
+    },
+    "Giant Goat": {
+      "name": "Chèvre Géante",
+      "tokenName": "Chèvre Géante",
+      "items": {
+        "Ram": {
+          "name": "Coup de Corne",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +5, allonge 1,50 m <em>Touché : </em>6 (1d6 + 3) dégâts contondants. If the goat moved at least 6 m straight toward la cible juste avant de le toucher, la cible takes an extra 5 (2d4) dégâts contondants and, si elle est de Taille Moyenne ou inférieure, has l'état &amp;Reference[prone].</p>",
+          "activities": {
+            "Charging Attack": {
+              "name": "Attaque en charge"
+            }
+          }
+        }
+      }
+    },
+    "Giant Insect": {
+      "name": "Insecte Géant",
+      "tokenName": "Insecte Géant",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplGiantInsec caption=false]</p>",
+      "items": {
+        "Spider Climb": {
+          "name": "Escalade Murale",
+          "description": "<p> Le insect peut escalader des surfaces difficiles, y compris les plafonds, without needing to make an test de caractéristique.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'insecte effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Poison Jab": {
+          "name": "Piqûre Venimeuse",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 3 m <em>Touché :</em> 1d6 + 3 plus le niveau du sort dégâts perforants plus 1d4 dégâts de poison.</p>"
+        },
+        "Web Bolt": {
+          "name": "Jet de Toile",
+          "description": "<p> <em>Jet d'attaque à distance :</em> Bonus égal à votre modificateur d'attaque de sort, portée 18 m <em>Touché :</em> 1d10 + 3 plus le niveau du sort dégâts contondants, et la cible’s Vitesse is réduit à 0 until the start of the insect’s next turn.</p>",
+          "effects": {
+            "Webbed": {
+              "name": "Entravé par la toile",
+              "description": "<p><span style=\"font-family:Signika, sans-serif\">La cible’s Vitesse is réduit à 0 until the start of the insect’s next turn.</span></p>"
+            }
+          }
+        },
+        "Venomous Spew": {
+          "name": "Crachat Venimeux",
+          "description": "<p><em>Jet de sauvegarde de Constitution :</em> DD de votre sort, une créature the insect peut voir dans un rayon de 3 m. <em>Échec :</em> La cible a l'état &amp;Reference[Poisoned apply=false] until the start of the insect’s next turn.</p>",
+          "effects": {
+            "Poisoned": {
+              "name": "Empoisonné",
+              "description": "<p>La cible a l'état &amp;Reference[Poisoned apply=false] until the start of the insect’s next turn.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Giant Seahorse": {
+      "name": "Hippocampe Géant",
+      "tokenName": "Hippocampe Géant",
+      "items": {
+        "Water Breathing": {
+          "name": "Respiration Aquatique",
+          "description": "<p>Le seahorse peut respirer uniquement sous l'eau.</p>"
+        },
+        "Ram": {
+          "name": "Coup de Corne",
+          "description": "<p><em>Jet d'attaque au corps à corps : </em>+4, allonge 1,50 m <em>Touché : </em>9 (2d6 + 2) dégâts contondants, ou l'hippocampe inflige 11 (2d8 + 2) dégâts contondants si elle s'est déplacée d'au moins 6 m straight toward la cible juste avant de le toucher.</p>",
+          "activities": {
+            "Charging Attack": {
+              "name": "Attaque en charge"
+            }
+          }
+        },
+        "Bubble Dash": {
+          "name": "Charge en Bulle",
+          "description": "<p> While underwater, the seahorse moves jusqu'à la moitié de sa Swim Vitesse without provoking attaque(s) d'opportunité.</p>"
+        }
+      }
+    },
+    "Giant Spider": {
+      "name": "Araignée Géante",
+      "tokenName": "Insecte Géant",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplGiantInsec caption=false]</p>",
+      "items": {
+        "Spider Climb": {
+          "name": "Escalade Murale",
+          "description": "<p> Le insect peut escalader des surfaces difficiles, y compris les plafonds, without needing to make an test de caractéristique.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'insecte effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Poison Jab": {
+          "name": "Piqûre Venimeuse",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 3 m <em>Touché :</em> 1d6 + 3 plus le niveau du sort dégâts perforants plus 1d4 dégâts de poison.</p>"
+        },
+        "Web Bolt": {
+          "name": "Jet de Toile",
+          "description": "<p> <em>Jet d'attaque à distance :</em> Bonus égal à votre modificateur d'attaque de sort, portée 18 m <em>Touché :</em> 1d10 + 3 plus le niveau du sort dégâts contondants, et la cible’s Vitesse is réduit à 0 until the start of the insect’s next turn.</p>",
+          "effects": {
+            "Webbed": {
+              "name": "Entravé par la toile",
+              "description": "<p><span style=\"font-family:Signika, sans-serif\">La cible’s Vitesse is réduit à 0 until the start of the insect’s next turn.</span></p>"
+            }
+          }
+        }
+      }
+    },
+    "Giant Wasp": {
+      "name": "Guêpe Géante",
+      "tokenName": "Insecte Géant",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplGiantInsec caption=false]</p>",
+      "items": {
+        "Spider Climb": {
+          "name": "Escalade Murale",
+          "description": "<p> Le insect peut escalader des surfaces difficiles, y compris les plafonds, without needing to make an test de caractéristique.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'insecte effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Poison Jab": {
+          "name": "Piqûre Venimeuse",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 3 m <em>Touché :</em> 1d6 + 3 plus le niveau du sort dégâts perforants plus 1d4 dégâts de poison.</p>"
+        }
+      }
+    },
+    "Giant Weasel": {
+      "name": "Belette Géante",
+      "tokenName": "Belette Géante",
+      "items": {
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> +5, allonge 1,50 m <em>Touché :</em> 5 (1d4 + 3) dégâts perforants.</p>"
+        }
+      }
+    },
+    "Goat": {
+      "name": "Chèvre",
+      "tokenName": "Chèvre",
+      "items": {
+        "Ram": {
+          "name": "Coup de Corne",
+          "description": "<p><em>Jet d'attaque au corps à corps : </em>+2, allonge 1,50 m <em>Touché : </em>1 dégâts contondants, or the goat deals 2 (1d4) dégâts contondants si elle s'est déplacée d'au moins 6 m straight toward la cible juste avant de le toucher.</p>",
+          "activities": {
+            "Charging Attack": {
+              "name": "Attaque en charge"
+            }
+          }
+        }
+      }
+    },
+    "Grasping Vine": {
+      "name": "Vigne Agrippeuse",
+      "tokenName": "Vigne Agrippeuse",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplGraspingVi caption=false]</p>",
+      "items": {
+        "Vine Attack": {
+          "name": "Attaque de Vigne",
+          "description": "<p>Effectuez un jet d'attaque de sort au corps à corps contre une créature dans un rayon de 9 m de la vigne. En cas de touché, la cible subit 4d8 dégâts contondants et is pulled jusqu\\'à 9 m vers la vine; if la cible is Très grande taille ou inférieure, it has l'état &amp;Reference[Grappled] (DD d'évasion equal to your DD de sauvegarde de sort).</p><p>La vigne can grapple [[@flags.dnd5e.summon.level - 3]] creature(s) at a time, and you can cause la vigne to release a Grappled creature (no action required).</p><h3>Escape Tests</h3><p>[[/check ability=str skill=ath dc=8+@prof+@flags.dnd5e.summon.mod]]</p><p>[[/check ability=dex skill=acr dc=8+@prof+@flags.dnd5e.summon.mod]]</p>"
+        }
+      }
+    },
+    "Guardian of Faith": {
+      "name": "Gardien de la Foi",
+      "tokenName": "Gardien de la Foi",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplGuardianof caption=false]</p>",
+      "items": {
+        "Guarded Area": {
+          "name": "Zone Gardée",
+          "description": "<p>Any enemy that se déplace vers un espace dans un rayon de 3 m of the guardian pour la première fois lors d'un tour or commence son tour là makes a Dexterity jet de sauvegarde, taking 20 dégâts radiants en cas de jet de sauvegarde raté or la moitié des dégâts en cas de réussiteful one. The guardian vanishes when it has dealt a total of 60 damage.</p><section id=\"secret-fNtHgg2PRmVbaDl5\" class=\"secret\"><p><strong>Note Foundry</strong></p><p>This feature's Limited Uses is optionally provided for tracking the total damage dealt by the guardian.  Additionally, The <strong>Consume Damage Pool</strong> activity is configured with scaling uses consumption in increments of 5 damage for use after the final damage is determined et applied.</p></section>",
+          "activities": {
+            "Consume Damage Pool": {
+              "name": "Absorber le réservoir de dégâts"
+            }
+          }
+        }
+      }
+    },
+    "Hawk": {
+      "name": "Faucon",
+      "tokenName": "Faucon",
+      "items": {
+        "Talons": {
+          "name": "Serres",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +5, allonge 1,50 m <em>Touché : </em>1 dégâts tranchants.</p>"
+        }
+      }
+    },
+    "Huge Animated Object": {
+      "name": "Objet Animé Gigantesque",
+      "tokenName": "Animated Object",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplAnimateObj caption=false]</p>",
+      "items": {
+        "Slam": {
+          "name": "Coup",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> dégâts de force égal à 2d12 + 3 + votre modificateur de caractéristique d'incantation.</p>"
+        }
+      }
+    },
+    "Illusory Creature": {
+      "name": "Créature Illusoire",
+      "tokenName": "Créature Illusoire"
+    },
+    "Illusory Object": {
+      "name": "Objet Illusoire",
+      "tokenName": "Objet Illusoire"
+    },
+    "Illusory Phenomenon": {
+      "name": "Phénomène Illusoire",
+      "tokenName": "Phénomène Illusoire"
+    },
+    "Imp": {
+      "name": "Diablotin",
+      "tokenName": "Diablotin",
+      "items": {
+        "Devil’s Sight": {
+          "name": "Vue du diable",
+          "description": "<p>L'obscurité magique n'entrave pas la vision dans le noir du diablotin.</p>"
+        },
+        "Magic Resistance": {
+          "name": "Résistance à la magie",
+          "description": "<p>Le diablotin a l'Avantage aux jets de sauvegarde contre les sorts et autres effets magiques.</p>"
+        },
+        "Sting": {
+          "name": "Dard",
+          "description": "<p> <em>Corps à corps :</em> +5, allonge 1,5m. <em>Touché :</em> 6 (1d6 + 3) dégâts de perforants plus 7 (2d6) dégâts de poison.</p>"
+        },
+        "Invisibility": {
+          "name": "Invisibilité",
+          "description": "<p>Le diablotin lance [[/item oHafKbzbqYGiL4i1]] sur lui-même, sans composantes matériel, le Charisme étant sa caractéristique d'incantation.</p><hr /><p>@Embed[.oHafKbzbqYGiL4i1 caption=false]</p>"
+        },
+        "Shape-Shift": {
+          "name": "Changement d'aspect",
+          "description": "<p>Le diablotin se métamorphose en prenant l'aspect d'un rat (vitesse 6 m), d'un corbeau (6 m, vol 18 m), d'une araignée (6 m, escalade 6 m) ou reprend sa forme véritable. Son profil reste le même pour chaque forme, à l'exception de sa vitesse. Rien de ce qu'il porte n'est transformé.</p>",
+          "activities": {
+            "Changer de forme": {
+              "name": "Changer de forme"
+            }
+          },
+          "effects": {
+            "Rat Form": {
+              "name": "Forme de rat"
+            },
+            "Raven Form": {
+              "name": "Forme de corbeau"
+            },
+            "Spider Form": {
+              "name": "Forme d'araignée"
+            }
+          }
+        },
+        "oHafKbzbqYGiL4i1": {
+          "name": "Invisibilité",
+          "description": "<p>La créature que vous touchez physiquement reçoit l'état &amp;Reference[invisible apply=false] jusqu'à la fin du le sort. Le sort prend fin prématurément si l cible effectue un jet d'attaque, inflige des dégâts ou lance un sort.</p>",
+          "activities": {
+            "Cast": {
+              "name": "Incantation"
+            }
+          },
+          "effects": {
+            "Invisibility": {
+              "name": "Invisibilité",
+              "description": "<p>Le sort prend fin prématurément si l cible effectue un jet d'attaque, inflige des dégâts ou lance un sort.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Invisible Sensor": {
+      "name": "Capteur Invisible",
+      "tokenName": "Capteur Invisible",
+      "effects": {
+        "Active Sense: Sight": {
+          "name": "Active Sense: Sight"
+        },
+        "Active Sense: Hearing": {
+          "name": "Active Sense: Hearing"
+        }
+      }
+    },
+    "Keelboat": {
+      "name": "Keelboat",
+      "tokenName": "Keelboat",
+      "description": "<p><strong>Vitesse:</strong> 1 mph</p><p><strong>Crew:</strong> 1</p><p><strong>Passengers:</strong> —</p><p><strong>Cargo (Tons):</strong> 1/2</p><p><strong>AC:</strong> 15</p><p><strong>HP:</strong> 100</p><p><strong>Damage Threshold:</strong> 10</p><p><strong>Cost:</strong> 3,000 GP</p>"
+    },
+    "Large Animated Object": {
+      "name": "Grand Objet Animé",
+      "tokenName": "Animated Object",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplAnimateObj caption=false]</p>",
+      "items": {
+        "Slam": {
+          "name": "Coup",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> dégâts de force égal à 2d6 + 3 + votre modificateur de caractéristique d'incantation.</p>"
+        }
+      }
+    },
+    "Light": {
+      "name": "Lumière",
+      "tokenName": "Lumière"
+    },
+    "Lion": {
+      "name": "Lion",
+      "tokenName": "Lion",
+      "items": {
+        "Pack Tactics": {
+          "name": "Tactiques de Meute",
+          "description": "<p>Le lion a l'Avantage aux jets d'attaque contre une créature si au moins un de ses alliés se trouve dans un rayon de 1,50 m de la cible et l'allié n'a pas l'état neutralisé.</p>"
+        },
+        "Running Leap": {
+          "name": "Bond en Course",
+          "description": "<p>With a 10-foot running start, le lion can Saut en longueur jusqu\\'à 7,50 m.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>Le lion effectue two [[/item Rend]] attacks. Il peut remplacer l'une de ces attaques par l'utilisation de [[/item Roar]].</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Rend": {
+          "name": "Lacération",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +5, allonge 1,50 m <em>Touché : </em>7 (1d8 + 3) dégâts tranchants.</p>"
+        },
+        "Roar": {
+          "name": "Rugissement",
+          "description": "<p><em>Jet de sauvegarde de Sagesse :</em> DD 11, une créature dans un rayon de 4,50 m. <em>Échec :</em> La cible a l'état &amp;Reference[frightened apply=false] until the start of le lion’s next turn.</p>",
+          "effects": {
+            "Frightened": {
+              "name": "Effrayé",
+              "description": "<p>La cible a l'état &amp;Reference[frightened apply=false] until the start of the lion’s next turn.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Lizard": {
+      "name": "Lézard",
+      "tokenName": "Lézard",
+      "items": {
+        "Spider Climb": {
+          "name": "Escalade Murale",
+          "description": "<p> Le lizard peut escalader des surfaces difficiles, y compris les plafonds, without needing to make an test de caractéristique.</p>"
+        },
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> +2, allonge 1,50 m <em>Touché :</em> 1 dégâts perforants.</p>"
+        }
+      }
+    },
+    "Longship": {
+      "name": "Navire Long",
+      "tokenName": "Navire Long",
+      "description": "<p><strong>Vitesse:</strong> 3 mph</p><p><strong>Crew:</strong> 40</p><p><strong>Passengers:</strong> 150</p><p><strong>Cargo (Tons):</strong> 10</p><p><strong>AC:</strong> 15</p><p><strong>HP:</strong> 300</p><p><strong>Damage Threshold:</strong> 15</p><p><strong>Cost:</strong> 10,000 GP</p>"
+    },
+    "Mage Hand": {
+      "name": "Main du Mage",
+      "tokenName": "Main du Mage",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplMageHand00 caption=false]</p>"
+    },
+    "Mastiff": {
+      "name": "Mastiff",
+      "tokenName": "Mastiff",
+      "items": {
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +3, allonge 1,50 m <em>Touché : </em>4 (1d6 + 1) dégâts perforants, et la cible a l'état &amp;Reference[prone] si elle est de Taille Moyenne ou inférieure.</p>"
+        }
+      }
+    },
+    "Medium Animated Object": {
+      "name": "Objet Animé de Taille Moyenne",
+      "tokenName": "Animated Object",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplAnimateObj caption=false]</p>",
+      "items": {
+        "Slam": {
+          "name": "Coup",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> dégâts de force égal à 1d4 + 3.</p>"
+        }
+      }
+    },
+    "Metal Construct Spirit": {
+      "name": "Esprit Artificiel Métallique",
+      "tokenName": "Esprit Artificiel",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonCons caption=false]</p>",
+      "items": {
+        "Heated Body": {
+          "name": "Corps Incandescent",
+          "description": "<p> Une créature qui touche l'esprit avec une attaque au corps à corps or that starts its turn in a agripper l'esprit subit 1d10 dégâts de feu.</p>",
+          "activities": {
+            "damage": {
+              "condition": "A creature that hits the spirit with a melee attack or that starts its turn in a grapple with the spirit"
+            }
+          }
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques [[/item Slam]] égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Slam": {
+          "name": "Coup",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 + 4 + le niveau du sort dégâts contondants.</p>"
+        }
+      }
+    },
+    "Mind Flayer Spirit": {
+      "name": "Esprit Flagelleur Mental",
+      "tokenName": "Aberrant Spirit",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonAber caption=false]</p>",
+      "items": {
+        "Whispering Aura": {
+          "name": "Aura Chuchotante",
+          "description": "<p> At the start of each of ses tours, l'esprit émet de l'énergie psionique if it n'a pas l'état neutralisé. <em>Jet de sauvegarde de Sagesse :</em> DD égal à votre DD de sauvegarde de sort, chaque créature (other than you) dans un rayon de 1,50 m of l'esprit. <em>Échec :</em> 2d6 dégâts psychiques.</p>",
+          "activities": {
+            "save": {
+              "condition": "start of its turn"
+            }
+          }
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Psychic Slam": {
+          "name": "Coup Psychique",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché : </em>1d8 + 3 + le niveau du sort dégâts psychiques.</p>"
+        }
+      }
+    },
+    "Mirthful Fey Spirit": {
+      "name": "Esprit Féérique Joyeux",
+      "tokenName": "Esprit Féérique",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonFey0 caption=false]</p>",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue a number of [[/item Fey Blade]] attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Fey Blade": {
+          "name": "Lame Féérique",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 2d6 + 3 + le niveau du sort dégâts de force.</p>"
+        },
+        "Fey Step": {
+          "name": "Pas Féérique",
+          "description": "<p>L'esprit se téléporte magiquement jusqu\\'à 9 m vers un espace inoccupé qu'il peut voir. Puis l'effet suivant se produit, based on the spirc'est humeur choisie:</p><p><strong>Joyeux. </strong><em>Jet de sauvegarde de Sagesse :</em> DD égal à votre DD de sauvegarde de sort, une créature the spirqu'il peut voir dans un rayon de 3 m of itself. <em>Échec :</em> La cible est &amp;Reference[charmed apply=false] by you and l'esprit pendant 1 minute ou jusqu'à ce que la cible subisse des dégâts.</p>",
+          "activities": {
+            "Teleport and Charm": {
+              "name": "Téléportation et Charme"
+            }
+          },
+          "effects": {
+            "Charmed": {
+              "name": "Charmé",
+              "description": "<p>La cible est &amp;Reference[charmed] by you and the spirit pendant 1 minute ou jusqu'à ce que la cible subisse des dégâts.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Monk": {
+      "name": "Moine",
+      "tokenName": "Moine",
+      "description": "<table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.5ay66aAVgkgRH7qH]{Step 1: Choose a Class}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Likes</th><th scope=\"col\">Primary Ability</th><th scope=\"col\">Complexity</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbMonk000000000]{Monk}</td><td>Unarmed combat</td><td>Dexterity et Wisdom</td><td>High</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.t1WP9VEevo4TOTXw]{Step 2: Determine Origin}</caption><thead><tr><th scope=\"col\">Background</th><th scope=\"col\">Species</th><th scope=\"col\">Choose Languages</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbbgGuide000000]{Guide}</td><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbspDragonborn0]{Dragonborn}</td><td>Dwarvish, Draconic</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.9o8NbQ1Ph2xCxlQh]{Step 3: Determine Ability Scores}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Str.</th><th scope=\"col\">Dex.</th><th scope=\"col\">Con.</th><th scope=\"col\">Int.</th><th scope=\"col\">Wis.</th><th scope=\"col\">Cha.</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.classes.Item.phbmnkMonk000000]{Monk}</td><td>12</td><td>15</td><td>13</td><td>10</td><td>14</td><td>8</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.6ThVICG0QSRy7L0F]{Step 4: Choose an Alignment}</caption><thead><tr><th scope=\"col\">Alignment</th><th scope=\"col\">Personality</th></tr></thead><tbody><tr><td>Lawful</td><td>Methodical</td></tr><tr><td>Neutral</td><td>Laconic</td></tr></tbody></table><p></p>"
+    },
+    "Mordenkainen’s Sword": {
+      "name": "Épée de Mordenkainen",
+      "tokenName": "Épée de Mordenkainen",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbswdMordenkain caption=false]</p>",
+      "items": {
+        "Move and Attack": {
+          "name": "Déplacer et Attaquer",
+          "description": "<p>On your later turns, you can take a action bonus to move the sword jusqu\\'à 9 m to a spot que vous pouvez voir et répéter l'attaque contre la même cible ou une autre. En cas de touché, la cible takes dégâts de force égal à 4d12 plus votre modificateur de caractéristique d'incantation.</p>"
+        }
+      }
+    },
+    "Mule": {
+      "name": "Mulet",
+      "tokenName": "Mulet",
+      "items": {
+        "Beast of Burden": {
+          "name": "Animal de Bât",
+          "description": "<p> The mule compte comme une taille de plus dans le but de determining its capacité de charge.</p>"
+        },
+        "Hooves": {
+          "name": "Sabots",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +4, allonge 1,50 m <em>Touché : </em>4 (1d4 + 2) dégâts contondants.</p>"
+        }
+      }
+    },
+    "Octopus": {
+      "name": "Pieuvre",
+      "tokenName": "Pieuvre",
+      "items": {
+        "Compression": {
+          "name": "Compression",
+          "description": "<p>Le octopus peut traverser un espace aussi étroit que 2,5 cm sans dépenser de mouvement supplémentaire to do so.</p>"
+        },
+        "Water Breathing": {
+          "name": "Respiration Aquatique",
+          "description": "<p>Le octopus peut respirer uniquement sous l'eau.</p>"
+        },
+        "Ink Cloud": {
+          "name": "Nuage d'Encre",
+          "description": "<p><em>Déclencheur :</em> Une créature termine son tour dans un rayon de 1,50 m of la pieuvre lorsqu'il est sous l'eau. <em>Réponse :</em> The octopus releases ink that remplit un 5-foot Cube centered sur lui-même, et la pieuvre se déplace jusqu'à its Swim Vitesse. The Cube is &amp;Reference[heavilyobscured] pendant 1 minute or until a strong current or similar effect disperses the ink.</p>",
+          "activities": {
+            "Obscure Area": {
+              "name": "Obscurcir la zone",
+              "condition": "a creature ends its turn within 5 feet of the octopus while underwater"
+            }
+          }
+        },
+        "Tentacles": {
+          "name": "Tentacules",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> +4, allonge 1,50 m <em>Touché :</em> 1 dégâts contondants.</p>"
+        }
+      }
+    },
+    "Otherworldly Steed": {
+      "name": "Destrier d'un Autre Monde",
+      "tokenName": "Destrier d'un Autre Monde",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplFindSteed0 caption=false]</p>",
+      "items": {
+        "Life Bond": {
+          "name": "Lien Vital",
+          "description": "<p> When you récupère points de vie from un sort de niveau 1 ou plus, la monture récupère the same number of points de vie if vous êtes dans un rayon de 1,50 m of it.</p>"
+        },
+        "Otherworldly Slam": {
+          "name": "Coup d'un Autre Monde",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 plus le niveau du sort of Radiant (Céleste), Psychic (Féérique), or Necrotic (Fiélon) damage.</p>"
+        },
+        "Fell Glare": {
+          "name": "Regard Sinistre",
+          "description": "<p><em>Jet de sauvegarde de Sagesse :</em> DD égal à votre DD de sauvegarde de sort, une créature dans un rayon de 18 m la monture peut voir. <em>Échec :</em> La cible a l'état &amp;Reference[frightened apply=false] until the end of your next turn.</p>",
+          "effects": {
+            "Frightened": {
+              "name": "Effrayé"
+            }
+          }
+        },
+        "Fey Step": {
+          "name": "Pas Féérique",
+          "description": "<p> La monture teleports, ainsi que son cavalier, vers un espace inoccupé de votre choix jusqu\\'à 18 m away from itself.</p>",
+          "activities": {
+            "Teleport": {
+              "name": "Téléportation"
+            }
+          }
+        },
+        "Healing Touch": {
+          "name": "Toucher Guérisseur",
+          "description": "<p> Une créature dans un rayon de 1,50 m of la monture récupère a number of points de vie égal à 2d8 plus le niveau du sort.</p>"
+        }
+      }
+    },
+    "Owl": {
+      "name": "Hibou",
+      "tokenName": "Hibou",
+      "items": {
+        "Flyby": {
+          "name": "Attaque en Vol",
+          "description": "<p> Le hibou ne provoque pas d'attaque d'opportunité lorsqu'il s'éloigne hors de portée d'un ennemi en volant.</p>"
+        },
+        "Talons": {
+          "name": "Serres",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +3, allonge 1,50 m <em>Touché : </em>1 dégâts tranchants.</p>"
+        }
+      }
+    },
+    "Paladin": {
+      "name": "Paladin",
+      "tokenName": "Paladin",
+      "description": "<table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.5ay66aAVgkgRH7qH]{Step 1: Choose a Class}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Likes</th><th scope=\"col\">Primary Ability</th><th scope=\"col\">Complexity</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbPaladin000000]{Paladin}</td><td>Defense</td><td>Strength et Charisma</td><td>Average</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.t1WP9VEevo4TOTXw]{Step 2: Determine Origin}</caption><thead><tr><th scope=\"col\">Background</th><th scope=\"col\">Species</th><th scope=\"col\">Choose Languages</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbbgNoble000000]{Noble}</td><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbspOrc00000000]{Orc}</td><td>Dwarvish, Orc</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.9o8NbQ1Ph2xCxlQh]{Step 3: Determine Ability Scores}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Str.</th><th scope=\"col\">Dex.</th><th scope=\"col\">Con.</th><th scope=\"col\">Int.</th><th scope=\"col\">Wis.</th><th scope=\"col\">Cha.</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.classes.Item.phbpdnPaladin000]{Paladin}</td><td>15</td><td>10</td><td>13</td><td>8</td><td>12</td><td>14</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.6ThVICG0QSRy7L0F]{Step 4: Choose an Alignment}</caption><thead><tr><th scope=\"col\">Alignment</th><th scope=\"col\">Personality</th></tr></thead><tbody><tr><td>Lawful</td><td>Judgmental</td></tr><tr><td>Good</td><td>Honest</td></tr></tbody></table>"
+    },
+    "Panther": {
+      "name": "Panthère",
+      "tokenName": "Panthère",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>La panthère effectue one [[/item Pounce]] attack et uses [[/item Prowl]].</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Pounce": {
+          "name": "Bondissement",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +4, allonge 1,50 m <em>Touché : </em>4 (1d4 + 2) dégâts tranchants, or the panther deals 7 (2d4 + 2) dégâts tranchants if it had Avantage on the jet d'attaque.</p>",
+          "activities": {
+            "Advantage Attack": {
+              "name": "Attaque avec Avantage",
+              "condition": "has Advantage on this attack"
+            }
+          }
+        },
+        "Prowl": {
+          "name": "Rôdage",
+          "description": "<p>The panpeut effectuer l'action &amp;Reference[hide]{Se cacher}.</p>",
+          "activities": {
+            "Move and Hide": {
+              "name": "Déplacer et se cacher"
+            }
+          }
+        }
+      }
+    },
+    "Phantom Steed": {
+      "name": "Destrier Fantôme",
+      "tokenName": "Cheval de Selle",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplPhantomSte caption=false]</p>",
+      "items": {
+        "Hooves": {
+          "name": "Sabots",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +5, allonge 1,50 m <em>Touché : </em>7 (1d8 + 3) dégâts contondants.</p>"
+        }
+      }
+    },
+    "Pony": {
+      "name": "Poney",
+      "tokenName": "Poney",
+      "items": {
+        "Hooves": {
+          "name": "Sabots",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +4, allonge 1,50 m <em>Touché : </em>4 (1d4 + 2) dégâts contondants.</p>"
+        }
+      }
+    },
+    "Pseudodragon": {
+      "name": "Pseudodragon",
+      "tokenName": "Pseudodragon",
+      "items": {
+        "Magic Resistance": {
+          "name": "Résistance à la Magie",
+          "description": "<p> The pseudodragon has Avantage on jet de sauvegardes against spells et other magical effects.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>Le pseudodragon effectue deux [[/item Bite]] attacks.</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p><em>Jet d'attaque au corps à corps : </em>+4, allonge 1,50 m <em>Touché :</em> 4 (1d4 + 2) dégâts perforants.</p>"
+        },
+        "Sting": {
+          "name": "Dard",
+          "description": "<p><em>Jet de sauvegarde de Constitution :</em> DD 12, une créature the pseudodragon peut voir dans un rayon de 1,50 m. <em>Échec :</em> 5 (2d4 + 2) dégâts de poison, et la cible a l'état &amp;Reference[poisoned apply=false] pendant 1 heure. <em>Échec de 5 ou plus :</em> The Poisoned target also has l'état &amp;Reference[unconscious apply=false] until it takes damage or another creature takes an action to shake it awake.</p>",
+          "effects": {
+            "Poisoned": {
+              "name": "Empoisonné",
+              "description": "<p>La cible a l'état &amp;Reference[poisoned apply=false] pendant 1 heure.</p>"
+            },
+            "Unconscious": {
+              "name": "Inconscient",
+              "description": "<p><em>Échec de 5 ou plus :</em> The Poisoned target also has l'état &amp;Reference[unconscious apply=false] until it takes damage or another creature takes an action to shake it awake.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Putrid Spirit": {
+      "name": "Esprit Putride",
+      "tokenName": "Esprit Mort-Vivant",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonUnde caption=false]</p>",
+      "items": {
+        "Festering Aura": {
+          "name": "Aura Purulente",
+          "description": "<p><em>Jet de sauvegarde de Constitution :</em> DD égal à votre DD de sauvegarde de sort, toute créature (autre que vous) qui commence son tour dans un rayon de une Émanation de 1,50 m émanant de l'esprit. <em>Échec :</em> The creature has l'état &amp;Reference[Poisoned apply=false] jusqu'au début de son prochain tour.</p>",
+          "activities": {
+            "save": {
+              "condition": "any other creature that starts its turn within range"
+            }
+          },
+          "effects": {
+            "Poisoned": {
+              "name": "Empoisonné",
+              "description": "<p>The creature has l'état &amp;Reference[poisoned apply=false] jusqu'au début de son prochain tour.</p>"
+            }
+          }
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Rotting Claw": {
+          "name": "Griffe Putride",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus: equals votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d6 + 3 + le niveau du sort dégâts tranchants. If la cible a l'état &amp;Reference[poisoned apply=false], it has l'état &amp;Reference[paralyzed apply=false] jusqu'à la fin de son prochain tour.</p>",
+          "effects": {
+            "Paralyzed": {
+              "name": "Paralysé",
+              "description": "<p>If la cible a l'état &amp;Reference[poisoned apply=false], it has l'état &amp;Reference[paralyzed apply=false] jusqu'à la fin de son prochain tour.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Quasit": {
+      "name": "Quasit",
+      "tokenName": "Quasit",
+      "items": {
+        "Magic Resistance": {
+          "name": "Résistance à la Magie",
+          "description": "<p> The quasit has Avantage on jet de sauvegardes against spells et other magical effects.</p>"
+        },
+        "Rend": {
+          "name": "Lacération",
+          "description": "<p><em>Jet d'attaque au corps à corps : </em>+5, allonge 1,50 m <em>Touché :</em> 5 (1d4 + 3) dégâts tranchants, et la cible a l'état &amp;Reference[poisoned apply=false] until the start of the quasc'est next turn.</p>",
+          "effects": {
+            "Poisoned": {
+              "name": "Empoisonné",
+              "description": "<p>La cible a l'état &amp;Reference[poisoned apply=false] until the start of the quasit’s next turn.</p>"
+            }
+          }
+        },
+        "Invisibility": {
+          "name": "Invisibilité",
+          "description": "<p>The quasit lance [[/item 7wNdT95XqhyGOpBd]] sur lui-même, requiring no composantes de sort et using Charisma as the caractéristique d'incantation.</p><hr /><p>@Embed[.7wNdT95XqhyGOpBd caption=false]</p>",
+          "activities": {
+            "Cast": {
+              "name": "Incantation"
+            }
+          }
+        },
+        "Scare": {
+          "name": "Terreur",
+          "description": "<p><em>Jet de sauvegarde de Sagesse :</em> DD 10, une créature dans un rayon de 6 m. <em>Échec :</em> La cible a l'état &amp;Reference[frightened apply=false]. À la fin de chacun de ses tours, la cible refait le jet de sauvegarde, mettant fin à l'effet en cas de réussite. After 1 minute, it réussit automatiquement.</p>",
+          "effects": {
+            "Frightened": {
+              "name": "Effrayé",
+              "description": "<p><span style=\"font-family:Signika, sans-serif\">À la fin de chacun de ses tours, la cible refait le jet de sauvegarde wis dc=10]]</p>"
+            }
+          }
+        },
+        "Shape-Shift": {
+          "name": "Changement d'Aspect",
+          "description": "<p> Le quasit se métamorphose pour ressembler à une chauve-souris (Vitesse 3 m, vol 12 m), un mille-pattes (12 m, escalade 12 m), or un crapaud (12 m, nage 12 m), ou reprend sa forme véritable. Ses caractéristiques sont identiques dans chaque forme, except for its Vitesse. Any equipment il porte or carrying n'est pas transformed.</p>",
+          "activities": {
+            "Change Form": {
+              "name": "Changer de forme"
+            }
+          },
+          "effects": {
+            "Centipede Form": {
+              "name": "Forme de mille-pattes"
+            },
+            "Bat Form": {
+              "name": "Forme de chauve-souris"
+            },
+            "Toad Form": {
+              "name": "Forme de crapaud"
+            }
+          }
+        },
+        "7wNdT95XqhyGOpBd": {
+          "name": "Invisibilité",
+          "description": "<p>Une créature que vous touchez a l'état &amp;Reference[invisible apply=false] jusqu'à la fin du sort. Le sort prend fin prématurément dès que la cible effectue un jet d'attaque, inflige des dégâts ou lance un sort.</p>",
+          "activities": {
+            "Cast": {
+              "name": "Incantation"
+            }
+          },
+          "effects": {
+            "Invisibility": {
+              "name": "Invisibilité",
+              "description": "<p>Le sort prend fin prématurément dès que la cible effectue un jet d'attaque, inflige des dégâts ou lance un sort.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Ranger": {
+      "name": "Rôdeur",
+      "tokenName": "Rôdeur",
+      "description": "<table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.5ay66aAVgkgRH7qH]{Step 1: Choose a Class}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Likes</th><th scope=\"col\">Primary Ability</th><th scope=\"col\">Complexity</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbRanger0000000]{Ranger}</td><td>Survival</td><td>Dexterity et Wisdom</td><td>Average</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.t1WP9VEevo4TOTXw]{Step 2: Determine Origin}</caption><thead><tr><th scope=\"col\">Background</th><th scope=\"col\">Species</th><th scope=\"col\">Choose Languages</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbbgWayfarer000]{Wayfarer}</td><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbspWoodElf0000]{Elf, Wood}</td><td>Gnomish, Elvish</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.9o8NbQ1Ph2xCxlQh]{Step 3: Determine Ability Scores}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Str.</th><th scope=\"col\">Dex.</th><th scope=\"col\">Con.</th><th scope=\"col\">Int.</th><th scope=\"col\">Wis.</th><th scope=\"col\">Cha.</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.classes.Item.phbrgrRanger0000]{Ranger}</td><td>12</td><td>15</td><td>13</td><td>8</td><td>14</td><td>10</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.6ThVICG0QSRy7L0F]{Step 4: Choose an Alignment}</caption><thead><tr><th scope=\"col\">Alignment</th><th scope=\"col\">Personality</th></tr></thead><tbody><tr><td>Chaotic</td><td>Self-absorbed</td></tr><tr><td>Good</td><td>Honest</td></tr></tbody></table>"
+    },
+    "Rat": {
+      "name": "Rat",
+      "tokenName": "Rat",
+      "items": {
+        "Agile": {
+          "name": "Agile",
+          "description": "<p> Le rat ne provoque pas d'attaque d'opportunité lorsqu'il quitte la portée d'un ennemi.</p>"
+        },
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> +2, allonge 1,50 m <em>Touché :</em> 1 dégâts perforants.</p>"
+        }
+      }
+    },
+    "Raven": {
+      "name": "Corbeau",
+      "tokenName": "Corbeau",
+      "items": {
+        "Mimicry": {
+          "name": "Mimétisme",
+          "description": "<p>Le raven peut imiter sons simples it has heard, comme un murmure ou un claquetis. A hearer can discern the sounds sont des imitations avec un [[/check skill=ins dc=10]] check.</p>"
+        },
+        "Beak": {
+          "name": "Bec",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> +4, allonge 1,50 m <em>Touché :</em> 1 dégâts perforants.</p>"
+        }
+      }
+    },
+    "Reef Shark": {
+      "name": "Requin de Récif",
+      "tokenName": "Requin de Récif",
+      "items": {
+        "Pack Tactics": {
+          "name": "Tactiques de Meute",
+          "description": "<p>Le requin a l'Avantage aux jets d'attaque contre une créature si au moins un de ses alliés se trouve dans un rayon de 1,50 m de la cible et l'allié n'a pas l'état neutralisé.</p>"
+        },
+        "Water Breathing": {
+          "name": "Respiration Aquatique",
+          "description": "<p>Le shark peut respirer uniquement sous l'eau.</p>"
+        },
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p><em>Jet d'attaque au corps à corps : </em>+4, allonge 1,50 m <em>Touché : </em>7 (2d4 + 2) dégâts perforants.</p>"
+        }
+      }
+    },
+    "Riding Horse": {
+      "name": "Cheval de Selle",
+      "tokenName": "Cheval de Selle",
+      "items": {
+        "Hooves": {
+          "name": "Sabots",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +5, allonge 1,50 m <em>Touché : </em>7 (1d8 + 3) dégâts contondants.</p>"
+        }
+      }
+    },
+    "Rogue": {
+      "name": "Roublard",
+      "tokenName": "Roublard",
+      "description": "<table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.5ay66aAVgkgRH7qH]{Step 1: Choose a Class}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Likes</th><th scope=\"col\">Primary Ability</th><th scope=\"col\">Complexity</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbRogue00000000]{Rogue}</td><td>Stealth</td><td>Dexterity</td><td>Low</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.t1WP9VEevo4TOTXw]{Step 2: Determine Origin}</caption><thead><tr><th scope=\"col\">Background</th><th scope=\"col\">Species</th><th scope=\"col\">Choose Languages</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbbgCriminal000]{Criminal}</td><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbspHalfling000]{Halfling}</td><td>Common Sign Language, Halfling</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.9o8NbQ1Ph2xCxlQh]{Step 3: Determine Ability Scores}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Str.</th><th scope=\"col\">Dex.</th><th scope=\"col\">Con.</th><th scope=\"col\">Int.</th><th scope=\"col\">Wis.</th><th scope=\"col\">Cha.</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.classes.Item.phbrgeRogue00000]{Rogue}</td><td>12</td><td>15</td><td>13</td><td>14</td><td>10</td><td>8</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.6ThVICG0QSRy7L0F]{Step 4: Choose an Alignment}</caption><thead><tr><th scope=\"col\">Alignment</th><th scope=\"col\">Personality</th></tr></thead><tbody><tr><td>Lawful</td><td>Loyal</td></tr><tr><td>Evil</td><td>Dishonest</td></tr></tbody></table>"
+    },
+    "Rowboat": {
+      "name": "Barque",
+      "tokenName": "Barque",
+      "description": "<p><strong>Vitesse:</strong> 1 1/2 mph</p><p><strong>Crew:</strong> 1</p><p><strong>Passengers:</strong> 3</p><p><strong>Cargo (Tons):</strong> —</p><p><strong>AC:</strong> 11</p><p><strong>HP:</strong> 50</p><p><strong>Damage Threshold:</strong> —</p><p><strong>Cost:</strong> 50 GP</p>"
+    },
+    "Sailing Ship": {
+      "name": "Voilier",
+      "tokenName": "Voilier",
+      "description": "<p><strong>Vitesse:</strong> 2 mph</p><p><strong>Crew:</strong> 20</p><p><strong>Passengers:</strong> 20</p><p><strong>Cargo (Tons):</strong> 100</p><p><strong>AC:</strong> 15</p><p><strong>HP:</strong> 300</p><p><strong>Damage Threshold:</strong> 15</p><p><strong>Cost:</strong> 10,000 GP</p>"
+    },
+    "Scorpion": {
+      "name": "Scorpion",
+      "tokenName": "Scorpion",
+      "items": {
+        "Sting": {
+          "name": "Dard",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +2, allonge 1,50 m <em>Touché : </em>1 dégâts perforants plus 3 (1d6) dégâts de poison.</p>"
+        }
+      }
+    },
+    "Secret Chest": {
+      "name": "Coffre Secret",
+      "tokenName": "Coffre Secret",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplLeomundsSe caption=false]</p>"
+    },
+    "Skeletal Spirit": {
+      "name": "Esprit Squelette",
+      "tokenName": "Esprit Mort-Vivant",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonUnde caption=false]</p>",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Grave Bolt": {
+          "name": "Éclair Funèbre",
+          "description": "<p><em>Jet d'attaque à distance :</em> Bonus égal à votre modificateur d'attaque de sort, portée 45 m <em>Touché :</em> 2d4 + 3 + le niveau du sort dégâts nécrotiques.</p>"
+        }
+      }
+    },
+    "Skeleton": {
+      "name": "Squelette",
+      "tokenName": "Squelette",
+      "items": {
+        "Shortsword": {
+          "name": "Épée Courte",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> +5, allonge 1,50 m <em>Touché :</em> 6 (1d6 + 3) dégâts perforants.</p>"
+        },
+        "Shortbow": {
+          "name": "Arc Court",
+          "description": "<p><em>Jet d'attaque à distance : </em>+5, portée 24/96 m <em>Touché :</em> 6 (1d6 + 3) dégâts perforants.</p>"
+        }
+      }
+    },
+    "Slaad Spirit": {
+      "name": "Esprit Slaad",
+      "tokenName": "Aberrant Spirit",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonAber caption=false]</p>",
+      "items": {
+        "Regeneration": {
+          "name": "Régénération",
+          "description": "<p>L'esprit récupère [[/healing 5]]{5 points de vie} au début de son tour si elle a au moins 1 point de vie.</p>",
+          "activities": {
+            "heal": {
+              "condition": "start of its turn"
+            }
+          }
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Claw": {
+          "name": "Griffe",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d10 + 3 + le niveau du sort dégâts tranchants, et la cible ne peut pas récupère points de vie until the start of the spirc'est next turn.</p>",
+          "effects": {
+            "Blocked Healing": {
+              "name": "Soin bloqué",
+              "description": "<p>La cible ne peut pas récupère points de vie until the start of the spirit’s next turn.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Têtard de slaad": {
+      "name": "Têtard slaad",
+      "tokenName": "Têtard slaad",
+      "items": {
+        "Résistance à la magie": {
+          "name": "Résistance à la magie",
+          "description": "<p>Le slaad a l'Avantage aux jets de sauvegarde contre les sorts et autres effets magiques.</p>"
+        },
+        "Morsure": {
+          "name": "Morsure",
+          "description": "<p> <em>corps à corps :</em> +4, allonge 1,5m. <em>Touché :</em> 5 (1d6 + 2) dégâts perforants.</p>"
+        }
+      }
+    },
+    "Small Animated Object": {
+      "name": "Petit Objet Animé",
+      "tokenName": "Animated Object",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplAnimateObj caption=false]</p>",
+      "items": {
+        "Slam": {
+          "name": "Coup",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> dégâts de force égal à 1d4 + 3.</p>"
+        }
+      }
+    },
+    "Sorcerer": {
+      "name": "Ensorceleur",
+      "tokenName": "Ensorceleur",
+      "description": "<table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.5ay66aAVgkgRH7qH]{Step 1: Choose a Class}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Likes</th><th scope=\"col\">Primary Ability</th><th scope=\"col\">Complexity</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbSorcerer00000]{Sorcerer}</td><td>Power</td><td>Charisma</td><td>High</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.t1WP9VEevo4TOTXw]{Step 2: Determine Origin}</caption><thead><tr><th scope=\"col\">Background</th><th scope=\"col\">Species</th><th scope=\"col\">Choose Languages</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbbgCharlatan00]{Charlatan}</td><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbspDrow0000000]{Elf, Drow}</td><td>Giant, Elvish</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.9o8NbQ1Ph2xCxlQh]{Step 3: Determine Ability Scores}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Str.</th><th scope=\"col\">Dex.</th><th scope=\"col\">Con.</th><th scope=\"col\">Int.</th><th scope=\"col\">Wis.</th><th scope=\"col\">Cha.</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.classes.Item.phbscrSorcerer00]{Sorcerer}</td><td>10</td><td>13</td><td>14</td><td>8</td><td>12</td><td>15</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.6ThVICG0QSRy7L0F]{Step 4: Choose an Alignment}</caption><thead><tr><th scope=\"col\">Alignment</th><th scope=\"col\">Personality</th></tr></thead><tbody><tr><td>Chaotic</td><td>Impulsive</td></tr><tr><td>Neutral</td><td>Laconic</td></tr></tbody></table>"
+    },
+    "Sphinx of Wonder": {
+      "name": "Sphinx des Merveilles",
+      "tokenName": "Sphinx des Merveilles",
+      "items": {
+        "Magic Resistance": {
+          "name": "Résistance à la Magie",
+          "description": "<p> The sphinx has Avantage on jet de sauvegardes against spells et other magical effects.</p>"
+        },
+        "Rend": {
+          "name": "Lacération",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> +5, allonge 1,50 m <em>Touché :</em> 5 (1d4 + 3) dégâts tranchants plus 7 (2d6) dégâts radiants.</p>"
+        },
+        "Burst of Ingenuity": {
+          "name": "Éclat d'Ingéniosité",
+          "description": "<p> <em>Déclencheur :</em> The sphinx or another creature dans un rayon de 9 m makes an test de caractéristique or a jet de sauvegarde. <em>Réponse :</em> The sphinx adds 2 to the roll.</p>",
+          "activities": {
+            "utility": {
+              "roll": "Roll Bonus",
+              "condition": "the sphinx or another creature within 30 feet makes an ability check or a saving throw"
+            }
+          }
+        }
+      }
+    },
+    "Spider": {
+      "name": "Araignée",
+      "tokenName": "Araignée",
+      "items": {
+        "Spider Climb": {
+          "name": "Escalade Murale",
+          "description": "<p>Le spider peut escalader des surfaces difficiles, y compris les plafonds, without needing to make an test de caractéristique.</p>"
+        },
+        "Web Walker": {
+          "name": "Marcheur de Toile",
+          "description": "<p> The spider ignores restrictions de mouvement causées par les toiles, et l'araignée connaît the location of any other creature en contact avec la même toile.</p>"
+        },
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p><em>Jet d'attaque au corps à corps : </em>+4, allonge 1,50 m <em>Touché : </em>1 dégâts perforants plus 2 (1d4) dégâts de poison.</p>"
+        }
+      }
+    },
+    "Spiritual Weapon": {
+      "name": "Arme Spirituelle",
+      "tokenName": "Arme Spirituelle",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSpiritualW caption=false]</p>",
+      "items": {
+        "Move and Attack": {
+          "name": "Déplacer et Attaquer",
+          "description": "<p>En tant qu'action bonus on your later turns, vous pouvez déplacer le force jusqu\\'à 6 m et repeat the attack against une créature dans un rayon de 1,50 m of it. En cas de touché, la cible takes dégâts de force égal à 1d8 plus votre modificateur de caractéristique d'incantation.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d8 for every slot level above 2.</p>"
+        }
+      }
+    },
+    "Sprite": {
+      "name": "Esprit follet",
+      "tokenName": "Esprit follet",
+      "items": {
+        "Needle Sword": {
+          "name": "Épée-ingle",
+          "description": "<p><em>Corps à corps : </em>+6, allonge 1,5m. <em>Touché :</em> 6 (1d4 + 4) dégâts perforants.</p>"
+        },
+        "Enchanting Bow": {
+          "name": "Arc enchanté",
+          "description": "<p><em>Jet d'attaque à distance : </em>+6, portée 12/48m. <em>Touché :</em> 1 dégât perforant, et la cible subit l'état &amp;Reference[charmed apply=false] jusqu'au début du tour suivant de l'esprit follet.</p>",
+          "effects": {
+            "Charmed": {
+              "name": "Charmé",
+              "description": "<p>La cible subit l'état &amp;Reference[charmed apply=false] jusqu'au début du tour suivant de l'esprit follet.</p>"
+            }
+          }
+        },
+        "Heart Sight": {
+          "name": "Perception du for intérieur",
+          "description": "<p> <em>JS Charisme :</em> DD 10, une créature que le l'esprit follet voit dans un rayon de 1,50m.(Célestes, Fiélons et Morts-vivants ratent automatiquement de JS.<em> Échec :</em> l'esprit follet l'alignement et l'affect actuel de la cible.</p>"
+        },
+        "Invisibility": {
+          "name": "Invisibilité",
+          "description": "<p>L'esprit follet lance [[/item lO6diOZO5FReftK6]] sur lui-même, sans composantes matériel, le Charisme étant sa caractéristique d'incantation.</p><hr /><p>@Embed[.lO6diOZO5FReftK6 caption=false]</p>",
+          "activities": {
+            "Cast": {
+              "name": "Incanter"
+            }
+          }
+        },
+        "lO6diOZO5FReftK6": {
+          "name": "Invisibilité",
+          "description": "<p>La créature que vous touchez physiquement reçoit l'état &amp;Reference[invisible apply=false] jusqu'à la fin du le sort. Le sort prend fin prématurément si l cible effectue un jet d'attaque, inflige des dégâts ou lance un sort.</p>",
+          "activities": {
+            "Cast": {
+              "name": "Incantation"
+            }
+          },
+          "effects": {
+            "Invisibility": {
+              "name": "Invisibilité",
+              "description": "<p>Le sort prend fin prématurément si l cible effectue un jet d'attaque, inflige des dégâts ou lance un sort.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Stone Construct Spirit": {
+      "name": "Esprit Artificiel de Pierre",
+      "tokenName": "Esprit Artificiel",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonCons caption=false]</p>",
+      "items": {
+        "Stony Lethargy": {
+          "name": "Léthargie de Pierre",
+          "description": "<p> Quand une créature commence son tour dans un rayon de 3 m de l'esprit, l'esprit peut le cibler avec de l'énergie magique if the spirqu'il peut voir it. <em>Jet de sauvegarde de Sagesse :</em> DD égal à votre DD de sauvegarde de sort, la cible. <em>Échec :</em> Jusqu'au début de son prochain tour, la cible ne peut pas make attaque(s) d'opportunité, and its Vitesse est réduite de moitié.</p>",
+          "effects": {
+            "Stony Lethargy": {
+              "name": "Léthargie de pierre",
+              "description": "<p><span style=\"font-family:Signika, sans-serif\">Jusqu'au début de son prochain tour, la cible ne peut pas make attaque(s) d'opportunité, and its Vitesse est réduite de moitié.</span></p>"
+            }
+          }
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques [[/item Slam]] égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Slam": {
+          "name": "Coup",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 + 4 + le niveau du sort dégâts contondants.</p>"
+        }
+      }
+    },
+    "Tiger": {
+      "name": "Tigre",
+      "tokenName": "Tigre",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>Le tigre effectue one [[/item Pounce]] attack et uses [[/item Prowl]].</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Pounce": {
+          "name": "Bondissement",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +5, allonge 1,50 m <em>Touché : </em>6 (1d6 + 3) dégâts tranchants. If the tiger had Avantage on the jet d'attaque, la cible takes an extra 3 (1d6) dégâts tranchants and, si elle est de Taille Moyenne ou inférieure, has l'état &amp;Reference[prone].</p>",
+          "activities": {
+            "Advantage Attack": {
+              "name": "Attaque avec Avantage",
+              "condition": "attack made with Advantage"
+            }
+          }
+        },
+        "Prowl": {
+          "name": "Rôdage",
+          "description": "<p>The tiger moves jusqu'à la moitié de sa Vitesse without provoking attaque(s) d'opportunité. At peut effectuer l'action &amp;Reference[hide]{Se cacher}.</p>",
+          "activities": {
+            "Move and Hide": {
+              "name": "Déplacer et se cacher"
+            }
+          }
+        }
+      }
+    },
+    "Tiny Animated Object": {
+      "name": "Minuscule Objet Animé",
+      "tokenName": "Animated Object",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplAnimateObj caption=false]</p>",
+      "items": {
+        "Slam": {
+          "name": "Coup",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> dégâts de force égal à 1d4 + 3.</p>"
+        }
+      }
+    },
+    "Tricksy Fey Spirit": {
+      "name": "Esprit Féérique Malicieux",
+      "tokenName": "Esprit Féérique",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonFey0 caption=false]</p>",
+      "items": {
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue a number of [[/item Fey Blade]] attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Fey Blade": {
+          "name": "Lame Féérique",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 2d6 + 3 + le niveau du sort dégâts de force.</p>"
+        },
+        "Fey Step": {
+          "name": "Pas Féérique",
+          "description": "<p>L'esprit se téléporte magiquement jusqu\\'à 9 m vers un espace inoccupé qu'il peut voir. Puis l'effet suivant se produit, based on the spirc'est humeur choisie:</p><p><strong>Malicieux.</strong> L'esprit remplit un Cube de 3 m dans un rayon de 1,50 m of it with obscurité magique &amp;Reference[darkness], qui dure jusqu'à la fin de son prochain tour.</p>",
+          "activities": {
+            "Teleport and Shroud": {
+              "name": "Téléportation et Voile"
+            }
+          }
+        }
+      }
+    },
+    "Undead Spirit": {
+      "name": "Esprit Mort-Vivant",
+      "tokenName": "Esprit Mort-Vivant",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonUnde caption=false]</p>",
+      "items": {
+        "Festering Aura": {
+          "name": "Aura Purulente",
+          "description": "<p><em>Jet de sauvegarde de Constitution :</em> DD égal à votre DD de sauvegarde de sort, toute créature (autre que vous) qui commence son tour dans un rayon de une Émanation de 1,50 m émanant de l'esprit. <em>Échec :</em> The creature has l'état &amp;Reference[Poisoned apply=false] jusqu'au début de son prochain tour.</p>",
+          "activities": {
+            "save": {
+              "condition": "any other creature that starts its turn within range"
+            }
+          },
+          "effects": {
+            "Poisoned": {
+              "name": "Empoisonné",
+              "description": "<p>The creature has l'état &amp;Reference[poisoned apply=false] jusqu'au début de son prochain tour.</p>"
+            }
+          }
+        },
+        "Incorporeal Passage": {
+          "name": "Déplacement Incorporel",
+          "description": "<p>L'esprit peut traverser other creatures et objects as if they were &amp;Reference[difficultterrain]. S'il termine son tour à l'intérieur d'un objet, it est repoussé vers the nearest espace inoccupé et takes [[/damage 1d10 type=force]] damage for every 1,50 m traveled.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Deathly Touch": {
+          "name": "Toucher Mortel",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 + 3 + le niveau du sort dégâts nécrotiques, et la cible a l'état &amp;Reference[frightened apply=false] jusqu'à la fin de son prochain tour.</p>",
+          "effects": {
+            "Frightened": {
+              "name": "Effrayé",
+              "description": "<p>The &amp;Reference[frightened apply=false] condition jusqu'à la fin de son prochain tour.</p>"
+            }
+          }
+        },
+        "Grave Bolt": {
+          "name": "Éclair Funèbre",
+          "description": "<p><em>Jet d'attaque à distance :</em> Bonus égal à votre modificateur d'attaque de sort, portée 45 m <em>Touché :</em> 2d4 + 3 + le niveau du sort dégâts nécrotiques.</p>"
+        },
+        "Rotting Claw": {
+          "name": "Griffe Putride",
+          "description": "<p><em>(Putride uniquement)</em></p><p><em>Jet d'attaque au corps à corps :</em> Bonus: equals votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d6 + 3 + le niveau du sort dégâts tranchants. If la cible a l'état &amp;Reference[poisoned apply=false], it has l'état &amp;Reference[paralyzed apply=false] jusqu'à la fin de son prochain tour.</p>",
+          "effects": {
+            "Paralyzed": {
+              "name": "Paralysé",
+              "description": "<p>If la cible a l'état &amp;Reference[poisoned apply=false], it has l'état &amp;Reference[paralyzed apply=false] jusqu'à la fin de son prochain tour.</p>"
+            }
+          }
+        }
+      }
+    },
+    "Unseen Servant": {
+      "name": "Serviteur Invisible",
+      "tokenName": "Serviteur Invisible",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplUnseenServ caption=false]</p>"
+    },
+    "Venomous Snake": {
+      "name": "Serpent Venimeux",
+      "tokenName": "Serpent Venimeux",
+      "items": {
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p><em>Jet d'attaque au corps à corps : </em>+4, allonge 1,50 m <em>Touché : </em>4 (1d4 + 2) dégâts perforants plus 3 (1d6) dégâts de poison.</p>"
+        }
+      }
+    },
+    "Warhorse": {
+      "name": "Destrier",
+      "tokenName": "Destrier",
+      "items": {
+        "Hooves": {
+          "name": "Sabots",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +6, allonge 1,50 m <em>Touché :</em> 9 (2d4 + 4) dégâts contondants. If the horse moved at least 6 m straight toward la cible juste avant de le toucher, la cible takes an extra 5 (2d4) dégâts contondants and, si elle est de Taille Moyenne ou inférieure, has l'état &amp;Reference[prone].</p>",
+          "activities": {
+            "Charging Attack": {
+              "name": "Attaque en charge"
+            }
+          }
+        }
+      }
+    },
+    "Warlock": {
+      "name": "Occultiste",
+      "tokenName": "Occultiste",
+      "description": "<table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.5ay66aAVgkgRH7qH]{Step 1: Choose a Class}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Likes</th><th scope=\"col\">Primary Ability</th><th scope=\"col\">Complexity</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbWarlock000000]{Warlock}</td><td>Occult lore</td><td>Charisma</td><td>High</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.t1WP9VEevo4TOTXw]{Step 2: Determine Origin}</caption><thead><tr><th scope=\"col\">Background</th><th scope=\"col\">Species</th><th scope=\"col\">Choose Languages</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbbgAcolyte0000]{Acolyte}</td><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbspRockGnome00]{Gnome, Rock}</td><td>Dwarvish, Gnomish</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.9o8NbQ1Ph2xCxlQh]{Step 3: Determine Ability Scores}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Str.</th><th scope=\"col\">Dex.</th><th scope=\"col\">Con.</th><th scope=\"col\">Int.</th><th scope=\"col\">Wis.</th><th scope=\"col\">Cha.</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.classes.Item.phbwlkWarlock000]{Warlock}</td><td>8</td><td>14</td><td>13</td><td>12</td><td>10</td><td>15</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.6ThVICG0QSRy7L0F]{Step 4: Choose an Alignment}</caption><thead><tr><th scope=\"col\">Alignment</th><th scope=\"col\">Personality</th></tr></thead><tbody><tr><td>Neutral</td><td>Laconic et Disinterested</td></tr></tbody></table>"
+    },
+    "Warship": {
+      "name": "Navire de Guerre",
+      "tokenName": "Navire de Guerre",
+      "description": "<p><strong>Vitesse:</strong> 2 1/2 mph</p><p><strong>Crew:</strong> 60</p><p><strong>Passengers:</strong> 60</p><p><strong>Cargo (Tons):</strong> 200</p><p><strong>AC:</strong> 15</p><p><strong>HP:</strong> 500</p><p><strong>Damage Threshold:</strong> 20</p><p><strong>Cost:</strong> 25,000 GP</p>"
+    },
+    "Water Elemental Spirit": {
+      "name": "Esprit Élémentaire d'Eau",
+      "tokenName": "Esprit Élémentaire",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonElem caption=false]</p>",
+      "items": {
+        "Amorphous Form": {
+          "name": "Forme Amorphe",
+          "description": "<p> L'esprit peut traverser un espace aussi étroit que de largeur 2,5 cm sans que cela compte comme terrain difficile.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques [[/item Slam]] égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Slam": {
+          "name": "Coup",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d10 + 4 + le niveau du sort dégâts de froid.</p>"
+        }
+      }
+    },
+    "Weasel": {
+      "name": "Belette",
+      "tokenName": "Belette",
+      "items": {
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> +5, allonge 1,50 m <em>Touché :</em> 1 dégâts perforants.</p>"
+        }
+      }
+    },
+    "Wizard": {
+      "name": "Magicien",
+      "tokenName": "Magicien",
+      "description": "<table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.5ay66aAVgkgRH7qH]{Step 1: Choose a Class}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Likes</th><th scope=\"col\">Primary Ability</th><th scope=\"col\">Complexity</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbWizard0000000]{Wizard}</td><td>Spellbooks</td><td>Intelligence</td><td>Average</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.t1WP9VEevo4TOTXw]{Step 2: Determine Origin}</caption><thead><tr><th scope=\"col\">Background</th><th scope=\"col\">Species</th><th scope=\"col\">Choose Languages</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbbgScribe00000]{Scribe}</td><td>@UUID[Compendium.dnd-players-handbook.origins.Item.phbspAasimar0000]{Aasimar}</td><td>Draconic, Common Sign Language</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.9o8NbQ1Ph2xCxlQh]{Step 3: Determine Ability Scores}</caption><thead><tr><th scope=\"col\">Class</th><th scope=\"col\">Str.</th><th scope=\"col\">Dex.</th><th scope=\"col\">Con.</th><th scope=\"col\">Int.</th><th scope=\"col\">Wis.</th><th scope=\"col\">Cha.</th></tr></thead><tbody><tr><td>@UUID[Compendium.dnd-players-handbook.classes.Item.phbwzdWizard0000]{Wizard}</td><td>8</td><td>12</td><td>13</td><td>15</td><td>14</td><td>10</td></tr></tbody></table><table><caption>@UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbCreatingAChar.JournalEntryPage.6ThVICG0QSRy7L0F]{Step 4: Choose an Alignment}</caption><thead><tr><th scope=\"col\">Alignment</th><th scope=\"col\">Personality</th></tr></thead><tbody><tr><td>Lawful</td><td>Methodical</td></tr><tr><td>Neutral</td><td>Selfish</td></tr></tbody></table>"
+    },
+    "Wolf": {
+      "name": "Loup",
+      "tokenName": "Loup",
+      "items": {
+        "Pack Tactics": {
+          "name": "Tactiques de Meute",
+          "description": "<p> Le loup a l'Avantage aux jets d'attaque contre une créature si au moins un de ses alliés se trouve dans un rayon de 1,50 m de la cible et l'allié n'a pas l'état neutralisé.</p>"
+        },
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> +4, allonge 1,50 m <em>Touché : </em>5 (1d6 + 2) dégâts perforants, et la cible a l'état &amp;Reference[prone] si elle est de Taille Moyenne ou inférieure.</p>"
+        }
+      }
+    },
+    "Yugoloth Spirit": {
+      "name": "Esprit Yugoloth",
+      "tokenName": "Esprit Fiélon",
+      "description": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonFien caption=false]</p>",
+      "items": {
+        "Magic Resistance": {
+          "name": "Résistance à la Magie",
+          "description": "<p> L'esprit a l'Avantage on jet de sauvegardes against spells et other magical effects.</p>"
+        },
+        "Multiattack": {
+          "name": "Attaques Multiples",
+          "description": "<p>L'esprit effectue un nombre d'attaques égal à la moitié du niveau de ce sort (arrondi à l'inférieur).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Nombre d'attaques}</p>",
+          "activities": {
+            "Activate": {
+              "name": "Activer"
+            }
+          }
+        },
+        "Claws": {
+          "name": "Griffes",
+          "description": "<p><em>Jet d'attaque au corps à corps :</em> Bonus égal à votre modificateur d'attaque de sort, allonge 1,50 m <em>Touché :</em> 1d8 + 3 + le niveau du sort dégâts tranchants. Immediately after the touche ou rate, l'esprit peut teleport jusqu\\'à 9 m vers un espace inoccupé qu'il peut voir.</p>",
+          "activities": {
+            "Attack and Teleport": {
+              "name": "Attaque et Téléportation"
+            }
+          }
+        }
+      }
+    },
+    "Zombie": {
+      "name": "Zombi",
+      "tokenName": "Zombi",
+      "items": {
+        "Undead Fortitude": {
+          "name": "Ténacité des Morts-Vivants",
+          "description": "<p> Si des dégâts réduisent le zombi à 0 point de vie, il doit réussir un jet de sauvegarde de Constitution de DD 5 + les dégâts subis, sauf si les dégâts sont radiants ou proviennent d'un coup critique. En cas de jet de sauvegarde réussi, the zombie drops to 1 point de vie à la place.</p>"
+        },
+        "Slam": {
+          "name": "Coup",
+          "description": "<p> <em>Jet d'attaque au corps à corps :</em> +3, allonge 1,50 m <em>Touché :</em> 4 (1d6 + 1) dégâts contondants.</p>"
+        }
+      }
+    },
+    "phbmobGiantSpide": {
+      "name": "Araignée Géante",
+      "tokenName": "Araignée Géante",
+      "items": {
+        "Spider Climb": {
+          "name": "Escalade Murale",
+          "description": "<p>Le spider peut escalader des surfaces difficiles, y compris les plafonds, without needing to make an test de caractéristique.</p>"
+        },
+        "Web Walker": {
+          "name": "Marcheur de Toile",
+          "description": "<p> The spider ignores restrictions de mouvement causées par les toiles, et elle connaît l'emplacement de any other creature en contact avec la même toile.</p>"
+        },
+        "Bite": {
+          "name": "Morsure",
+          "description": "<p><em>Jet d'attaque au corps à corps : </em>+5, allonge 1,50 m <em>Touché :</em> 7 (1d8 + 3) dégâts perforants plus 7 (2d6) dégâts de poison.</p>"
+        },
+        "Web": {
+          "name": "Toile",
+          "description": "<p><em>Jet de sauvegarde de Dextérité :</em> DD 13, une créature the spider peut voir dans un rayon de 18 m. <em>Échec :</em> La cible a l'état &amp;Reference[restrained] until la toile est détruite (CA 10 ; HP 5; Vulnerability to dégâts de feu; Immunity to Poison et dégâts psychiques).</p>"
+        }
+      }
+    }
+  }
+}
