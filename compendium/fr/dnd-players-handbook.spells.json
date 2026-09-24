@@ -306,6 +306,7 @@
     "Armor of Agathys": {
       "name": "Armure d'Agathys",
       "description": "<p>Une gelée protectrice magique vous entoure, vous conférant 5 points de vie temporaires. Si une créature vous touche avec une attaque de mêlée avant la fin du sort, elle subit 5 points de dégâts de froid. Le sort prend fin prématurément si vous n'avez plus de points de vie temporaires.</p><p><strong>Utiliser un emplacement de sort supérieur.</strong> Les points de vie temporaires et les dégâts de froid augmentent chacun de 5 pour chaque niveau d'emplacement de sort supérieur au 1er.</p>",
+      "materials": "un éclat de verre bleu",
       "activities": {
         "Cast": {
           "name": "Lancer"
@@ -531,7 +532,8 @@
     },
     "Bigby's Hand": {
       "name": "Main de Bigby",
-      "description": "<p>Vous créez une grande main d'énergie magique scintillante dans un espace inoccupé visible à portée. La main persiste pour la durée du sort et se déplace à votre commande, imitant les mouvements de votre propre main.</p><p>La main est un objet avec une CA de 20 et des points de vie égaux à votre maximum de points de vie. Si elle tombe à 0 points de vie, le sort se termine. La main n'occupe pas son espace.</p><p>Quand vous lancez le sort et comme Action Bonus à chacun de vos tours suivants, vous pouvez déplacer la main jusqu'à 18 m et lui faire réaliser un des effets suivants :</p><p><strong>Poing Serré</strong> @Embed[Compendium.dnd-players-handbook.actors.Actor.phbsplBigbysHand.Item.phbaoiClenchedFi inline]</p><p><strong>Main Forceuse</strong> @Embed[Compendium.dnd-players-handbook.actors.Actor.phbsplBigbysHand.Item.phbaoiForcefulHa inline]</p><p><strong>Main Agrippante</strong> @Embed[Compendium.dnd-players-handbook.actors.Actor.phbsplBigbysHand.Item.phbaoiGraspingHa inline classes=\"no-secrets\"]</p><p><strong>Main Interposante</strong> @Embed[Compendium.dnd-players-handbook.actors.Actor.phbsplBigbysHand.Item.phbaoiInterposin inline]</p><p><strong>Emplacement de niveau supérieur.</strong> Les dégâts du Poing Serré augmentent de 2d8 et ceux de la Main Agrippante de 2d6 pour chaque niveau d'emplacement au-dessus du niveau 5.</p>"
+      "description": "<p>Vous créez une grande main d'énergie magique scintillante dans un espace inoccupé visible à portée. La main persiste pour la durée du sort et se déplace à votre commande, imitant les mouvements de votre propre main.</p><p>La main est un objet avec une CA de 20 et des points de vie égaux à votre maximum de points de vie. Si elle tombe à 0 points de vie, le sort se termine. La main n'occupe pas son espace.</p><p>Quand vous lancez le sort et comme Action Bonus à chacun de vos tours suivants, vous pouvez déplacer la main jusqu'à 18 m et lui faire réaliser un des effets suivants :</p><p><strong>Poing Serré</strong> @Embed[Compendium.dnd-players-handbook.actors.Actor.phbsplBigbysHand.Item.phbaoiClenchedFi inline]</p><p><strong>Main Forceuse</strong> @Embed[Compendium.dnd-players-handbook.actors.Actor.phbsplBigbysHand.Item.phbaoiForcefulHa inline]</p><p><strong>Main Agrippante</strong> @Embed[Compendium.dnd-players-handbook.actors.Actor.phbsplBigbysHand.Item.phbaoiGraspingHa inline classes=\"no-secrets\"]</p><p><strong>Main Interposante</strong> @Embed[Compendium.dnd-players-handbook.actors.Actor.phbsplBigbysHand.Item.phbaoiInterposin inline]</p><p><strong>Emplacement de niveau supérieur.</strong> Les dégâts du Poing Serré augmentent de 2d8 et ceux de la Main Agrippante de 2d6 pour chaque niveau d'emplacement au-dessus du niveau 5.</p>",
+      "materials": "une coquille d'œuf et un gant"
     },
     "Blade Barrier": {
       "name": "Barrière de Lames",
@@ -714,7 +716,8 @@
     },
     "Cloud of Daggers": {
       "name": "Nuée de dagues",
-      "description": "<p>Vous invoquez des dagues tournoyantes dans un Cube de 1,5 mètre centré sur un point dans la portée. Chaque créature dans cette zone subit 4d4 dégâts Tranchants. Une créature subit aussi ces dégâts si elle entre dans le Cube ou termine son tour dedans, ou si le Cube entre dans son espace. Une créature ne subit ces dégâts qu’une fois par tour.</p><p>Lors de vos tours suivants, vous pouvez utiliser une action magique pour téléporter le Cube jusqu'à 9 m.</p><p><strong>Emplacement de niveau supérieur.</strong> Les dégâts augmentent de 2d4 pour chaque niveau d’emplacement au-delà de 2.</p>"
+      "description": "<p>Vous invoquez des dagues tournoyantes dans un Cube de 1,5 mètre centré sur un point dans la portée. Chaque créature dans cette zone subit 4d4 dégâts Tranchants. Une créature subit aussi ces dégâts si elle entre dans le Cube ou termine son tour dedans, ou si le Cube entre dans son espace. Une créature ne subit ces dégâts qu’une fois par tour.</p><p>Lors de vos tours suivants, vous pouvez utiliser une action magique pour téléporter le Cube jusqu'à 9 m.</p><p><strong>Emplacement de niveau supérieur.</strong> Les dégâts augmentent de 2d4 pour chaque niveau d’emplacement au-delà de 2.</p>",
+      "materials": "un fraagement de verre"
     },
     "Cloudkill": {
       "name": "Brume mortelle",
@@ -849,7 +852,8 @@
     },
     "Conjure Volley": {
       "name": "Invocation de Volée",
-      "description": "<p>Vous brandissez l'arme utilisée pour le sort et choisissez un point dans la portée. Des centaines d'armes spectrales (ou des munitions adaptées) tombent en une volée et disparaissent. Chaque créature de votre choix visible dans un Cylindre de 12 m de rayon et de 6 m de hauteur centré sur ce point fait un jet de sauvegarde de Dextérité. Elle subit 8d8 dégâts de Force en cas d'échec ou la moitié en cas de réussite.</p>"
+      "description": "<p>Vous brandissez l'arme utilisée pour le sort et choisissez un point dans la portée. Des centaines d'armes spectrales (ou des munitions adaptées) tombent en une volée et disparaissent. Chaque créature de votre choix visible dans un Cylindre de 12 m de rayon et de 6 m de hauteur centré sur ce point fait un jet de sauvegarde de Dextérité. Elle subit 8d8 dégâts de Force en cas d'échec ou la moitié en cas de réussite.</p>",
+      "materials": "une arme de corps à corps ou à distance d'une valeur minimale de 1 pc"
     },
     "Conjure Woodland Beings": {
       "name": "Invocation d'Êtres Sylvestres",
@@ -1043,7 +1047,7 @@
     },
     "Darkness": {
       "name": "Ténèbres",
-      "description": "<p>Pendant la durée du sort, des &amp;Reference[darkness] magique se déploient depuis un point à portée en remplissant une sphère de 4,50 m de rayon. La vision dans le noir ne perce pas ces Ténèbres et les lumières non magiques n'illuminent pas dasn la sphère.</p><p>Au lieu de cela, vous pouvez lancer le sort sur un objet porté par personne, de manièree à cee que les Ténèbres emplissent une émanation de 4,50 m centré sur l'objet.</p><p>Il suffit de recouvrir cet objet d'une surface opaque, comme une gamelle ou un heaume, pour bloquer les Ténèbres</p><p>Si tout ou partie de ce sort chevauche la zone de Lumière vive ou faible créée par un sort du 2e niveau ou inferieur, l'effet qui produit cette lumière est dissipé.</p>",
+      "description": "<p>Pour toute la durée, des &amp;Reference[darkness] magique se déploient depuis un point à portée en remplissant une sphère de 4,50 m de rayon. La vision dans le noir ne perce pas ces Ténèbres et les lumières non magiques n'illuminent pas dans la sphère.</p><p>Au lieu de cela, vous pouvez lancer le sort sur un objet porté par personne, de manière à ce que les Ténèbres emplissent une émanation de 4,50 m centré sur l'objet.</p><p>Il suffit de recouvrir cet objet d'une surface opaque, comme une gamelle ou un heaume, pour bloquer les Ténèbres</p><p>Si tout ou partie de ce sort chevauche la zone de Lumière vive ou faible créée par un sort du 2e niveau ou inferieur, l'effet qui produit cette lumière est dissipé.</p>",
       "materials": "une touffe de fourrure de chauve-souris et un bout de charbon"
     },
     "Darkvision": {
@@ -1320,7 +1324,8 @@
         "Exhale": {
           "name": "Expirer"
         }
-      }
+      },
+      "materials": "un piment"
     },
     "Drawmij's Instant Summons": {
       "name": "Convocations instantanées de Drawmij",
@@ -1551,7 +1556,8 @@
           "name": "Immobilisé",
           "description": "<p>Une créature &amp;Reference[Immobilisé apply=false] peut utiliser une action pour effectuer un test de [[/check ability=str skill=ath dc=@attributes.spelldc]] contre votre DD de sort, mettant fin à la condition si elle réussit.</p>"
         }
-      }
+      },
+      "materials": "un tentacule"
     },
     "Expeditious Retreat": {
       "name": "Repli expéditif",
@@ -2287,7 +2293,8 @@
         "End of Turn Save": {
           "name": "Jet de Sauvegarde à la fin du tour"
         }
-      }
+      },
+      "materials": "un tentacule de poulpe mariné"
     },
     "Hunter's Mark": {
       "name": "Marque du chasseur",
@@ -2404,7 +2411,8 @@
           "name": "Sens submergés",
           "description": "<p>Tant qu'elles se trouvent dans cette zone, les créatures ont les conditions &amp;Reference[Blinded apply=false] (Aveuglée) et &amp;Reference[Deafened apply=false] (Assourdie), et elles ne peuvent pas lancer de sorts avec un composant verbal.</p>"
         }
-      }
+      },
+      "materials": "une pincée de phosphore"
     },
     "Jump": {
       "name": "Saut",
@@ -2440,7 +2448,8 @@
     },
     "Leomund's Tiny Hut": {
       "name": "Petite hutte de Léomund",
-      "description": "<p>Une émanation de 3 m surgit autour de vous et reste immobile pendant toute la durée. Le sort échoue si, au moment de son lancement, l'émanation n'est pas suffisamment grande pour contenir toutes les créatures dans sa zone.</p><p>Les créatures et les objets à l'intérieur de l'émanation lorsque vous lancez le sort peuvent la traverser librement. Tous les autres créatures et objets sont bloqués. Les sorts de niveau 3 ou moins ne peuvent être lancés à travers elle, et leurs effets ne peuvent pas y pénétrer.</p><p>L'atmosphère à l'intérieur de l'émanation est confortable et sèche, indépendamment des conditions extérieures. Jusqu'à la fin du sort, vous pouvez choisir de régler l'intérieur en &amp;Reference[dimlight] ou &amp;Reference[darkness] (aucune action requise). L'émanation est opaque de l'extérieur et peut être de n'importe quelle couleur de votre choix, mais elle est transparente de l'intérieur.</p><p>Le sort se termine prématurément si vous quittez l'émanation ou si vous le relancez.</p>"
+      "description": "<p>Une émanation de 3 m surgit autour de vous et reste immobile pendant toute la durée. Le sort échoue si, au moment de son lancement, l'émanation n'est pas suffisamment grande pour contenir toutes les créatures dans sa zone.</p><p>Les créatures et les objets à l'intérieur de l'émanation lorsque vous lancez le sort peuvent la traverser librement. Tous les autres créatures et objets sont bloqués. Les sorts de niveau 3 ou moins ne peuvent être lancés à travers elle, et leurs effets ne peuvent pas y pénétrer.</p><p>L'atmosphère à l'intérieur de l'émanation est confortable et sèche, indépendamment des conditions extérieures. Jusqu'à la fin du sort, vous pouvez choisir de régler l'intérieur en &amp;Reference[dimlight] ou &amp;Reference[darkness] (aucune action requise). L'émanation est opaque de l'extérieur et peut être de n'importe quelle couleur de votre choix, mais elle est transparente de l'intérieur.</p><p>Le sort se termine prématurément si vous quittez l'émanation ou si vous le relancez.</p>",
+      "materials": "une bille de cristal"
     },
     "Lesser Restoration": {
       "name": "Restauration partielle",
@@ -2808,7 +2817,7 @@
       "description": "<p>Vous invoquez un chien de garde fantomatique dans un espace inoccupé à portée que vous pouvez voir. Le chien reste jusqu’à la fin de la durée ou tant que vous ne vous éloignez pas de lui de plus de 90 m.</p><p>Personne d’autre que vous ne peut voir le chien, et il est intangible et invulnérable. Lorsqu'une créature de taille Petite ou supérieure s'approche à moins de 9 m sans prononcer le mot de passe que vous avez spécifié lors du lancement du sort, le chien commence à aboyer bruyamment. Le chien possède une vision véritable dans un rayon de 9 m.</p><p>Au début de chacun de vos tours, le chien tente de mordre un ennemi situé à 1,5 mètre de lui. Cet ennemi doit réussir un jet de sauvegarde de Dextérité ou subir 4d8 dégâts de Force.</p><p>Lors de vos tours ultérieurs, vous pouvez prendre une action magique pour déplacer le chien jusqu'à 9 m.</p>",
       "activities": {
         "Move Hound": {
-          "name": "Move Hound"
+          "name": "Déplacer le chien"
         }
       }
     },
@@ -2817,9 +2826,10 @@
       "description": "<p>Vous invoquez une porte scintillante dans la zone à portée qui dure pour la durée du sort. La porte mène à une demeure extradimensionnelle et mesure 1,5 mètre de large et 3 m de haut. Vous et toute créature que vous désignez au lancement du sort pouvez entrer dans la demeure extradimensionnelle tant que la porte reste ouverte. Vous pouvez ouvrir ou fermer la porte (sans action) si vous êtes à moins de 9 m. Lorsqu’elle est fermée, la porte devient imperceptible.</p><p>Derrière la porte se trouve un magnifique vestibule avec de nombreuses chambres au-delà. L’atmosphère de la demeure est propre, fraîche et chaleureuse.</p><p>Vous pouvez créer le plan que vous souhaitez pour la demeure, dans la limite de 50 cubes contigus de 3 m de côté. L’endroit est meublé et décoré à votre guise. Il contient suffisamment de nourriture pour un banquet de neuf plats pour 100 personnes. Les meubles et autres objets créés par ce sort se dissipent en fumée s’ils sont retirés de la demeure.</p><p>Un personnel de 100 serviteurs presque transparents prend soin de toutes les personnes qui entrent. Vous déterminez l’apparence et la tenue de ces serviteurs. Ils sont invulnérables et obéissent à vos ordres. Chaque serviteur peut accomplir des tâches qu’un humain pourrait réaliser, mais ils ne peuvent ni attaquer ni effectuer d’actions qui pourraient blesser directement une autre créature. Les serviteurs ne peuvent pas quitter la demeure.</p><p>Quand le sort prend fin, toute créature ou objet laissé dans l’espace extradimensionnel est expulsé dans les espaces inoccupés les plus proches de l’entrée.</p>",
       "activities": {
         "Create Door": {
-          "name": "Create Door"
+          "name": "Créer une porte"
         }
-      }
+      },
+      "materials": "une porte miniature d'une valeur minimale de 15 po"
     },
     "Mordenkainen's Private Sanctum": {
       "name": "Sanctuaire Privé de Mordenkainen",
@@ -2828,7 +2838,8 @@
         "Cast": {
           "name": "Lancer"
         }
-      }
+      },
+      "materials": "un feuille de plomb"
     },
     "Mordenkainen's Sword": {
       "name": "Épée de Mordenkainen",
@@ -2895,7 +2906,8 @@
           "name": "Piégée dans la glace",
           "description": "<p>Les créatures qui nageaient à la surface de l'eau gelée sont piégées dans la glace et obtiennent la condition &amp;Reference[Restrained apply=false] Entravée. Une créature piégée peut effectuer une action pour faire un test de [[/check ability=str skill=ath]] Force (Athlétisme) contre le DD de sauvegarde de vos sorts afin de se libérer.</p>"
         }
-      }
+      },
+      "materials": "une sphère miniature en cristal"
     },
     "Otiluke's Resilient Sphere": {
       "name": "Sphère résiliente d'Otiluke",
@@ -2910,7 +2922,8 @@
         "Cast": {
           "name": "Lancer"
         }
-      }
+      },
+      "materials": "une sphère de verre"
     },
     "Otto's Irresistible Dance": {
       "name": "Danse Irrésistible d’Otto",
@@ -3281,7 +3294,8 @@
         "Bonded Telepathy": {
           "name": "Télépathie liée"
         }
-      }
+      },
+      "materials": "deux œufs"
     },
     "Ray of Enfeeblement": {
       "name": "Rayon affaiblissant",
@@ -3877,26 +3891,26 @@
       "materials": "poudre de diamant d'une valeur minimale de 100 po, que le sort détruit"
     },
     "Storm of Vengeance": {
-      "name": "Tempête de Vengeresse",
-      "description": "<p>Un nuage orageux tourbillonnant se forme pour la durée du sort, centré sur un point à portée et s'étendant sur un rayon de 90 m. Chaque créature sous le nuage lorsque celui-ci apparaît doit réussir un jet de sauvegarde de Constitution ou subir 2d6 dégâts de tonnerre et recevoir la condition &amp;Reference[Deafened apply=false] pour la durée.</p><p>Au début de chacun de vos tours suivants, la tempête produit différents effets, comme détaillé ci-dessous.</p><p><strong>Tour 2.</strong> De la pluie acide tombe. Chaque créature et objet sous le nuage subit 4d6 dégâts d'acide.</p><p><strong>Tour 3.</strong> Vous appelez six éclairs du nuage pour frapper six créatures ou objets différents en dessous. Chaque cible doit réussir un jet de sauvegarde de Dextérité, subissant 10d6 dégâts de foudre en cas d'échec, ou la moitié en cas de réussite.</p><p><strong>Tour 4.</strong> Des grêlons tombent. Chaque créature sous le nuage subit 2d6 dégâts de contondants.</p><p><strong>Tours 5–10.</strong> Des rafales de vent et de la pluie glaciale frappent la zone sous le nuage. Chaque créature subit 1d6 dégâts de froid. Jusqu'à la fin du sort, la zone est &amp;Reference[DifficultTerrain] et &amp;Reference[HeavilyObscured], les attaques à distance avec des armes y sont impossibles et un vent fort souffle dans la zone.</p>",
+      "name": "Tempête Vengeresse",
+      "description": "<p>Un nuage menaçant se forme pour toute la durée, centré sur un point à portée, et se déploie sur un rayon de 90 m. Chaque créature prise dans le nuage à son apparition doit réussir un jet de sauvegarde de Constitution sous peine de subir 2d6 dégâts de tonnerre ainsi que l'état &amp;Reference[Deafened apply=false] pour toute la durée.</p><p>Au début de chacun de vos tours suivants, la tempête produit des effets différents, comme détaillé ci-après.</p><p><strong>Tour 2.</strong> De la pluie acide tombe. Chaque créature et objet sous le nuage subit 4d6 dégâts d'acide.</p><p><strong>Tour 3.</strong> Vous appelez six éclairs du nuage pour frapper six créatures ou objets différents en dessous. Chaque cible doit réussir un jet de sauvegarde de Dextérité, subissant 10d6 dégâts de foudre en cas d'échec, ou la moitié en cas de réussite.</p><p><strong>Tour 4.</strong> Des grêlons tombent. Chaque créature sous le nuage subit 2d6 dégâts de contondants.</p><p><strong>Tours 5–10.</strong> Des rafales de vent et de la pluie glaciale frappent la zone sous le nuage. Chaque créature subit 1d6 dégâts de froid. Jusqu'à la fin du sort, la zone est &amp;Reference[DifficultTerrain] et &amp;Reference[HeavilyObscured], les attaques à distance avec des armes y sont impossibles et un vent fort souffle dans la zone.</p>",
       "activities": {
         "Create Storm": {
           "name": "Créer la tempête"
         },
         "Turn 2: Acid Rain": {
-          "name": "Tour 2 : Pluie acide",
+          "name": "Tour 2 : Une plui acide s'abat.",
           "condition": "au début de votre tour"
         },
         "Turn 3: Lightning": {
-          "name": "Tour 3 : Éclair",
+          "name": "Tour 3 : Vous invoquez six éclairs qui jaillissent du nuage pour frapper six créatures ou objets différents en dessous.",
           "condition": "au début de votre tour"
         },
         "Turn 4: Hailstones": {
-          "name": "Tour 4 : Grêle",
+          "name": "Tour 4 : La grêle s'abat depuis le nuage.",
           "condition": "au début de votre tour"
         },
         "Turn 5+: Gusts and Rain": {
-          "name": "Tour 5+ : Rafales et pluie",
+          "name": "Tour 5+ : la zone directement dominée par le nuage est assaillie de bourasques et d'une pluie glaciale.",
           "condition": "au début de votre tour"
         }
       },
@@ -4062,7 +4076,9 @@
             "name": "Vif {}"
           }
         }
-      }
+      },
+      "materials": "un carquois d'une valeur minimale de 1 po"
+
     },
     "Symbol": {
       "name": "Symbole",
@@ -4137,6 +4153,7 @@
     },
     "Tasha's Hideous Laughter": {
       "name": "Fou Rire de Tasha",
+      "materials": "une tartelette et une plume",
       "description": "<p>Une créature de votre choix que vous voyez à portée du sort effectue un jet de sauvegarde de Sagesse. En cas d'échec, elle obtient les conditions &amp;Reference[prone apply=false] et &amp;Reference[incapacitated apply=false] pour la durée. Pendant ce temps, elle rit de manière incontrôlable si elle en est capable, et ne peut pas mettre fin à la condition Allongé par elle-même.</p><p>À la fin de chacun de ses tours et chaque fois qu'elle subit des dégâts, elle effectue un autre [[/save ability=wis dc=@attributes.spelldc]] jet de sauvegarde. La cible a l'avantage sur le jet si celui-ci est déclenché par des dégâts. Si l'attaque touche, le sort prend fin.</p><p><strong>Utilisation avec un Emplacement de Sort de Niveau Supérieur.</strong> Vous pouvez cibler une créature supplémentaire pour chaque niveau d'emplacement au-delà du 1er.</p>",
       "effects": {
         "Uncontrollable Laughter": {
@@ -4161,7 +4178,8 @@
         "Telepathically Linked": {
           "name": "Lié par télépathie"
         }
-      }
+      },
+      "materials": "deux bagues jointes en argent"
     },
     "Teleport": {
       "name": "Téléportation",
@@ -4197,7 +4215,7 @@
     },
     "Thorn Whip": {
       "name": "Fouet épineux",
-      "description": "<p>Vous créez un fouet à l'aspect de ronce qui s'ababt sur une créature que vous lui désignez à portée. Effectuez une attaque de sort au corps à corps contre la cible. Sii l'attaque touche, la cible subit 1d6 dégâts perforants et, si elle est de taille G ou infériieure, vous pouvez la rapprocher de vous d'un maximum de 3 m.</p><p><strong>Amélioration de sort mineur.</strong> Les dégâts augmentent de 1d6 lorsque vous atteignez les niveaux 5 (2d6), 11 (3d6) et 17 (4d6).</p>",
+      "description": "<p>Vous créez un fouet à l'aspect de ronce qui s'ababt sur une créature que vous lui désignez à portée. Effectuez une attaque de sort au corps à corps contre la cible. Si l'attaque touche, la cible subit 1d6 dégâts perforants et, si elle est de taille G ou infériieure, vous pouvez la rapprocher de vous d'un maximum de 3 m.</p><p><strong>Amélioration de sort mineur.</strong> Les dégâts augmentent de 1d6 lorsque vous atteignez les niveaux 5 (2d6), 11 (3d6) et 17 (4d6).</p>",
       "activities": {
         "Attack and Pull": {
           "name": "Attaquer et tirer"
@@ -4558,6 +4576,7 @@
     "Witch Bolt": {
       "name": "Trait ensorcelé",
       "description": "<p>Un rayon d'énergie crépitante file vers Une créature que vous voyez à portée, formant un arc de foudre entre elle est vous. Effectuez contre elle une attaque de sort distance. Si l'attaque touche, la cible subit 2d12 dégâts de foudre.</p><p>À chacun de vos tours suivants, vous pouvez par ne action bonus lui infliger automatiquement 1d12 dégâts de foudre à la cible, même si la première attaque est ratée.</p><p>Le sort se termine si la cible se retrouve hors de portée ou encore si elle bénéficie d'un &amp;Reference[totalcover]{Abri total} vis-à-vis de vous.</p><p><strong>Emplacement de niveau supérieur.</strong> Les dégâts initiaux augmentent de 1d12 par niveau d'emplacement au delà du 1er.</p>",
+      "materials": "une petite branche frappée par la foudre",
       "activities": {
         "Bonus Action Damage": {
           "name": "Dégâts par action bonus"
@@ -4572,7 +4591,8 @@
     },
     "Word of Radiance": {
       "name": "Mot de Radiance",
-      "description": "<p>Une lumière brûlante éclate autour de vous dans une émanation de 1,5 mètre. Chaque créature de votre choix que vous pouvez voir dans cette zone doit réussir un jet de sauvegarde de Constitution ou subir 1d6 dégâts radiants.</p><p><strong>Amélioration de Tour de Magie.</strong> Les dégâts augmentent de 1d6 lorsque vous atteignez les niveaux 5 (2d6), 11 (3d6) et 17 (4d6).</p>"
+      "description": "<p>Une lumière brûlante éclate autour de vous dans une émanation de 1,5 mètre. Chaque créature de votre choix que vous pouvez voir dans cette zone doit réussir un jet de sauvegarde de Constitution ou subir 1d6 dégâts radiants.</p><p><strong>Amélioration de Tour de Magie.</strong> Les dégâts augmentent de 1d6 lorsque vous atteignez les niveaux 5 (2d6), 11 (3d6) et 17 (4d6).</p>",
+      "materials": "un symbole en forme de soleil"
     },
     "Word of Recall": {
       "name": "Mot de Retour",
@@ -4608,7 +4628,8 @@
           "condition": "une créature est dans l'émanation",
           "chatFlavor": "Pousser de 3 m et &Reference[prone] en cas d'échec"
         }
-      }
+      },
+      "materials": "un diadème miniature"
     },
     "Zone of Truth": {
       "name": "Zone de Vérité",

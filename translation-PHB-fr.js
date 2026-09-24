@@ -1,6 +1,6 @@
 const MODULE_ID = 'translation-PHB-fr';
 
-Hooks.on('init', () => {
+Hooks.once('init', () => {
   game.settings.register(MODULE_ID, 'autoRegisterBabel', {
     name: 'Activer automatiquement la traduction via Babele',
     hint: 'Active automatiquement les traductions Babele sans avoir à pointer vers le répertoire contenant les traductions.',
@@ -8,25 +8,20 @@ Hooks.on('init', () => {
     config: true,
     default: true,
     type: Boolean,
-    onChange: value => {
-      if (value) {
-        autoRegisterBabel();
-      }
-      window.location.reload();
-    },
+    onChange: () => window.location.reload(),
   });
+});
 
+Hooks.once('babele.init', () => {
   if (game.settings.get(MODULE_ID, 'autoRegisterBabel')) {
     autoRegisterBabel();
   }
 });
 
 function autoRegisterBabel() {
-  if (game.babele) {
-    game.babele.register({
-      module: MODULE_ID,
-      lang: 'fr',
-      dir: 'compendium/fr'
-    });
-  }
+  game.babele.register({
+    module: MODULE_ID,
+    lang: 'fr',
+    dir: 'compendium/fr'
+  });
 }
